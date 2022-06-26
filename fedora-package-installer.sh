@@ -289,6 +289,14 @@ case "$GIT" in [yY] | [yY][eE][sS])
     ;;
 esac
 
+# 🔵 B.3.3. Office
+# 🧩 LIBREOFFICE
+installPackage "$LIBREOFFICE" "libreoffice"
+# 🧩 OKULAR
+installPackage "$OKULAR" "okular"
+# 🧩 THUNDERBIRD
+installPackage "$THUNDERBIRD" "thunderbird"
+
 # 🔵 B.3.4. Media
 # 🧩 CODECS
 case "$CODECS" in [yY] | [yY][eE][sS])

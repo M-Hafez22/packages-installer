@@ -76,6 +76,22 @@ case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
         ;;
 esac
 
+# A.3.4 Choose Media
+case "$MEDIA" in [yY] | [yY][eE][sS])
+    printf "\n📺\e[1;32m  Choose Media Packages: \e[0m\n\n"
+    MEDIA_PACKAGES="CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO YOUTUBE_DL FFPROBE"
+    MEDIA_INDEX=1
+    for MEDIA_PACKAGE in $MEDIA_PACKAGES
+        do
+        read -p "$MEDIA_INDEX. Do you want to $MEDIA_PACKAGE❔ y/n: " $MEDIA_PACKAGE
+        ((MEDIA_INDEX++))
+        done
+    ;;
+    *)
+        printf ""
+    ;;
+esac
+
 # B. Process
 
 # B.1. Update the System

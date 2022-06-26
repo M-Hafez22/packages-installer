@@ -95,3 +95,62 @@ case "$FLATPAK" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+
+# B.3 Install Packages
+# B.3.1. Install Desktop Environments
+# 🧩 Install Awesome
+installPackage "$AWESOME" "awesome"
+# 🧩 Install Budgie
+case "$BUDGIE" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Budgie\e[0m\n"
+    sudo dnf copr enable stenstorp/budgie -y && sudo dnf install budgie-desktop budgie-extras -y
+    printf "\n✅\e[1;32m Budgie Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install Cinnamon
+installPackage "$CINNAMON"  "@cinnamon-desktop-environment copyq "
+# 🧩 Install Gnome
+case "$GNOME" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Gnome\e[0m\n"
+    sudo dnf group install -y "GNOME Desktop Environment" && sudo dnf install -y gnome-tweaks.noarch gnome-extensions-app
+    printf "\n✅\e[1;32m Gnome Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install KDE
+case "$KDE" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing KDE\e[0m\n"
+    sudo dnf -y group install "KDE Plasma Workspaces"
+    printf "\n✅\e[1;32m KDE Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install MATE
+case "$MATE" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing MATE\e[0m\n"
+    sudo dnf -y group install "MATE Desktop"
+    printf "\n✅\e[1;32m MATE Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install Pantheon
+case "$PANTHEON" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Pantheon\e[0m\n"
+    sudo dnf group install -y "pantheon desktop"
+    printf "\n✅\e[1;32m Pantheon Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install Xfce
+installPackage "$XFCE" "@xfce-desktop-environment xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiskermenu-plugin"

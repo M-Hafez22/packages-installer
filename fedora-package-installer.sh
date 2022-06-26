@@ -76,6 +76,22 @@ case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
         ;;
 esac
 
+# 🔵 A.3.4 Choose Office
+case "$OFFICE" in [yY] | [yY][eE][sS])
+    printf "\n📝\e[1;32m  Choose Office Packages: \e[0m\n\n"
+    OFFICE_PACKAGES="LIBREOFFICE OKULAR THUNDERBIRD"
+    OFFICE_INDEX=1
+    for OFFICE_PACKAGE in $OFFICE_PACKAGES
+        do
+        read -p "$OFFICE_INDEX. Do you want to $OFFICE_PACKAGE❔ y/n: " $OFFICE_PACKAGE
+        ((OFFICE_INDEX++))
+        done
+        ;;
+    *)
+        printf ""
+        ;;
+esac
+
 # 🔵 A.3.4 Choose Media
 case "$MEDIA" in [yY] | [yY][eE][sS])
     printf "\n📺\e[1;32m  Choose Media Packages: \e[0m\n\n"

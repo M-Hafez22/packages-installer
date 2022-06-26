@@ -156,6 +156,22 @@ case "$TERMINAL" in [yY] | [yY][eE][sS])
     ;;
 esac
 
+# 🔵 A.3.8 Choose OTHER
+case "$OTHER" in [yY] | [yY][eE][sS])
+    printf "\n👾\e[1;32m  Choose OTHER: \e[0m\n\n"
+    OTHER_PACKAGES="ROFI PLANK"
+    OTHER_INDEX=1
+    for OTHER_PACKAGE in $OTHER_PACKAGES
+        do
+        read -p "$OTHER_INDEX. Do you want to $OTHER_PACKAGE❔ y/n: " $OTHER_PACKAGE
+        ((OTHER_INDEX++))
+        done
+    ;;
+    *)
+        printf ""
+    ;;
+esac
+
 # B. Process
 
 # B.1. Update the System
@@ -468,3 +484,9 @@ installPackage "$TERMINATOR" "terminator"
 installPackage "$ZSH" "zsh"
 # 🧩 RETRO_TERM
 installPackage "$RETRO_TERM" "cool-retro-term"
+
+# 🔵 OTHER
+# 🧩 ROFI
+installPackage "$ROFI" "rofi"
+# 🧩 PLANK
+installPackage  "$PLANK" "plank"

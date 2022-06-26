@@ -35,7 +35,7 @@ for PACKAGES_CATEGORIE in $PACKAGES_CATEGORIES
     ((CATEGORIE_INDEX++))
 done
 
-# 🔵 A.3.1. Choose Desktop Environment
+# 🎨 A.3.1. Choose Desktop Environment
 case "$DESKTOP_ENVIRONMENT" in [yY] | [yY][eE][sS])
     printf "\n🎨\e[1;32m  Choose Desktop Environment(s): \e[0m\n\n"
     DES="AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
@@ -51,7 +51,7 @@ case "$DESKTOP_ENVIRONMENT" in [yY] | [yY][eE][sS])
         ;;
 esac
 
-# 🔵 A.3.2 DEV_TOOLS
+# 👨‍💻 A.3.2 DEV_TOOLS
 case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
     printf "\n👨‍💻\e[1;32m  Choose Developer Tools: \e[0m\n\n"
     DEVS="VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
@@ -77,7 +77,7 @@ case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
         ;;
 esac
 
-# 🔵 A.3.3 Choose Office
+# 📝 A.3.3 Choose Office
 case "$OFFICE" in [yY] | [yY][eE][sS])
     printf "\n📝\e[1;32m  Choose Office Packages: \e[0m\n\n"
     OFFICE_PACKAGES="LIBREOFFICE OKULAR THUNDERBIRD FONTS"
@@ -93,7 +93,7 @@ case "$OFFICE" in [yY] | [yY][eE][sS])
         ;;
 esac
 
-# 🔵 A.3.4 Choose Media
+# 📺 A.3.4 Choose Media
 case "$MEDIA" in [yY] | [yY][eE][sS])
     printf "\n📺\e[1;32m  Choose Media Packages: \e[0m\n\n"
     MEDIA_PACKAGES="CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
@@ -109,7 +109,7 @@ case "$MEDIA" in [yY] | [yY][eE][sS])
     ;;
 esac
 
-# 🔵 A.3.5 Choose Browsers
+# 🌐 A.3.5 Choose Browsers
 case "$BROWSERS" in [yY] | [yY][eE][sS])
     printf "\n🌐\e[1;32m  Choose Browsers: \e[0m\n\n"
     BROWSERS_PACKAGES="CHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE WATERFOX"
@@ -125,7 +125,7 @@ case "$BROWSERS" in [yY] | [yY][eE][sS])
     ;;
 esac
 
-# 🔵 A.3.6 Choose PHOTO_EDITING
+# 🖼️ A.3.6 Choose PHOTO_EDITING
 case "$PHOTO_EDITING" in [yY] | [yY][eE][sS])
     printf "\n🖼️\e[1;32m  Choose PHOTO_EDITING: \e[0m\n\n"
     PHOTO_EDITING_PACKAGES="GIMP INKSCAPE"
@@ -141,7 +141,7 @@ case "$PHOTO_EDITING" in [yY] | [yY][eE][sS])
     ;;
 esac
 
-# 🔵 A.3.7 Choose Terminal
+# 💻 A.3.7 Choose Terminal
 case "$TERMINAL" in [yY] | [yY][eE][sS])
     printf "\n💻\e[1;32m  Choose TERMINAL: \e[0m\n\n"
     TERMINAL_PACKAGES="BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
@@ -157,7 +157,7 @@ case "$TERMINAL" in [yY] | [yY][eE][sS])
     ;;
 esac
 
-# 🔵 A.3.8 Choose OTHER
+# 👾 A.3.8 Choose OTHER
 case "$OTHER" in [yY] | [yY][eE][sS])
     printf "\n👾\e[1;32m  Choose OTHER: \e[0m\n\n"
     OTHER_PACKAGES="ROFI PLANK"
@@ -247,7 +247,7 @@ case "$EXPERIMENTAL_KERNEL" in [yY] | [yY][eE][sS])
 esac
 
 # B.3 Install Packages
-# 🔵 B.3.1. Install Desktop Environments
+# 🎨 B.3.1. Install Desktop Environments
 # 🧩 Install Awesome
 installPackage "$AWESOME" "awesome"
 # 🧩 Install Budgie
@@ -263,7 +263,7 @@ installPackage "$MATE" " mate-core  mate-desktop-environment mate-menu mate-appl
 # 🧩 Install Xfce
 installPackage "$XFCE" " xfce4 xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiswmenu-plugin"
 
-# 🔵 B.3.2. Developer Tools
+# 👨‍💻 B.3.2. Developer Tools
 # 🧩 Install VSCODE
 case "$VSCODE" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing VSCODE\e[0m\n"
@@ -334,7 +334,7 @@ case "$GIT" in [yY] | [yY][eE][sS])
     ;;
 esac
 
-# 🔵 B.3.3. Office
+# 📝 B.3.3. Office
 # 🧩 LIBREOFFICE
 installPackage "$LIBREOFFICE" "libreoffice"
 # 🧩 OKULAR
@@ -344,7 +344,7 @@ installPackage "$THUNDERBIRD" "thunderbird"
 # 🧩 FONTS
 installPackage "$FONTS" "fonts-noto-color-emoji ttf-mscorefonts-installer ttf-ancient-fonts ttf-ancient-fonts-symbola"
 
-# 🔵 B.3.4. Media
+# 📺 B.3.4. Media
 # 🧩 AUDACIOUS
 installPackage "$AUDACIOUS" "audacious audacious-plugins"
 # 🧩 VLC
@@ -362,7 +362,7 @@ installPackage "$MP3INFO" "mp3info"
 # 🧩 FFPROBE
 installPackage "$FFPROBE" "ffmpeg"
 
-# 🔵 B.3.5. Browsers
+# 🌐 B.3.5. Browsers
 # 🧩 CHROMIUM
 installPackage "$CHROMIUM" "chromium"
 # 🧩 CHROME
@@ -427,13 +427,13 @@ esac
 # 🧩 WATERFOX
 installPackage "$WATERFOX" "waterfox-g3"
 
-# 🔵 A.3.6 PHOTO_EDITE
+# 🖼️ A.3.6 PHOTO_EDITE
 # 🧩 GIMP
 installPackage "$GIMP" "gimp"
 # 🧩 INKSCAPE
 installPackage "$INKSCAPE" "inkscape"
 
-# 🔵 TERMINAL
+# 💻 TERMINAL
 # 🧩 BPYTOP
 installPackage "$BPYTOP" "bpytop"
 # 🧩 HTOP
@@ -455,7 +455,7 @@ installPackage "$ZSH" "zsh"
 # 🧩 RETRO_TERM
 installPackage "$RETRO_TERM" "cool-retro-term"
 
-# 🔵 OTHER
+# 👾 OTHER
 # 🧩 ROFI
 installPackage "$ROFI" "rofi"
 # 🧩 PLANK

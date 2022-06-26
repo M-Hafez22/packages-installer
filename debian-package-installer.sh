@@ -23,3 +23,14 @@ function installPackage() {
         ;;
     esac
 }
+
+# B.1. Update the System
+case "$UPDATE" in [yY] | [yY][eE][sS])
+    printf "\n\n📥\e[1;32m  Update \e[0m\n"
+    sudo apt update -y && sudo apt upgrade -y 
+    printf "\n✅\e[1;32m  Update && Upgrade\e[0m\n"
+    ;;
+    *)
+    printf ""
+    ;;
+esac

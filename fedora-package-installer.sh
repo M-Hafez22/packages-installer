@@ -76,7 +76,7 @@ case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
         ;;
 esac
 
-# 🔵 A.3.4 Choose Office
+# 🔵 A.3.3 Choose Office
 case "$OFFICE" in [yY] | [yY][eE][sS])
     printf "\n📝\e[1;32m  Choose Office Packages: \e[0m\n\n"
     OFFICE_PACKAGES="LIBREOFFICE OKULAR THUNDERBIRD"

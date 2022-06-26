@@ -272,3 +272,37 @@ case "$GIT" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+
+# B.3.4. Media
+# 🧩 CODECS
+case "$CODECS" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Media CODECS\e[0m\n"
+    sudo dnf groupupdate multimedia --setop="install\*weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y && sudo dnf groupupdate sound-and-video -y
+    printf "\n✅\e[1;32m Media CODECS Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 AUDACIOUS
+installPackage "$AUDACIOUS" "audacious"
+# 🧩 VLC
+installPackage "$VLC" "vlc" 
+# 🧩 MPV
+installPackage "$MPV" "mpv"
+# 🧩 CLEMENTINE
+installPackage "$CLEMENTINE" "clementine"
+# 🧩 OBS_STUDIO
+installPackage "$OBS_STUDIO" "obs-studio"
+# 🧩 YOUTUBE_DL
+installPackage "$YOUTUBE_DL" "youtube-dl"
+# 🧩 FFPROBE
+case "$FFPROBE" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing FFPROBE\e[0m\n"
+     sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  &&  sudo dnf -y install ffmpeg  &&  sudo dnf -y install ffmpeg-devel
+    printf "\n✅\e[1;32m FFPROBE Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac

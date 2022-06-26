@@ -140,6 +140,22 @@ case "$PHOTO_EDITING" in [yY] | [yY][eE][sS])
     ;;
 esac
 
+# 🔵 A.3.7 Choose Terminal
+case "$TERMINAL" in [yY] | [yY][eE][sS])
+    printf "\n💻\e[1;32m  Choose TERMINAL: \e[0m\n\n"
+    TERMINAL_PACKAGES="BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
+    TERMINAL_INDEX=1
+    for TERMINAL_PACKAGE in $TERMINAL_PACKAGES
+        do
+        read -p "$TERMINAL_INDEX. Do you want to $TERMINAL_PACKAGE❔ y/n: " $TERMINAL_PACKAGE
+        ((TERMINAL_INDEX++))
+        done
+    ;;
+    *)
+        printf ""
+    ;;
+esac
+
 # B. Process
 
 # B.1. Update the System
@@ -430,3 +446,25 @@ esac
 installPackage "$GIMP" "gimp"
 # 🧩 INKSCAPE
 installPackage "$INKSCAPE" "inkscape"
+
+# 🔵 TERMINAL
+# 🧩 BPYTOP
+installPackage "$BPYTOP" "bpytop"
+# 🧩 HTOP
+installPackage "$HTOP" "htop"
+# 🧩 SL
+installPackage "$SL" "sl"
+# 🧩 CMATRIX
+installPackage "$CMATRIX" "cmatrix"
+# 🧩 LOLCAT
+installPackage "$LOLCAT" "lolcat"
+# 🧩 NEOFETCH
+installPackage "$NEOFETCH" "neofetch"
+# 🧩 TREE
+installPackage "$TREE" "tree"
+# 🧩 TERMINATOR
+installPackage "$TERMINATOR" "terminator"
+# 🧩 ZSH
+installPackage "$ZSH" "zsh"
+# 🧩 RETRO_TERM
+installPackage "$RETRO_TERM" "cool-retro-term"

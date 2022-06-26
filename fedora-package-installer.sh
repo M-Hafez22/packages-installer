@@ -34,3 +34,36 @@ case "$UPDATE" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+
+# B.2. ADD_REPOSITORIES
+# FUSION
+case "$FUSION" in [yY] | [yY][eE][sS])
+  printf "\n\n📥\e[1;32m Adding FUSION Repos\e[0m\n"
+  sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+  sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+  printf "\n✅ \e[1;32m FUSION Repos\e[0m\n"
+  ;;
+  *)
+  printf ""
+  ;;
+esac
+# Snap
+case "$SANP" in [yY] | [yY][eE][sS])
+  printf "\n\n📥\e[1;32m Adding Snap\e[0m\n"
+  sudo dnf install snapd -y && sudo ln -s /var/lib/snapd/snap /snap
+  printf "\n✅ \e[1;32m Reboot to use Sanp\e[0m\n"
+  ;;
+  *)
+  printf ""
+  ;;
+esac
+# Flatpak
+case "$FLATPAK" in [yY] | [yY][eE][sS])
+  printf "\n\n📥\e[1;32m  Adding Flatpak\e[0m\n"
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  printf "\n✅\e[1;32m flatpak\e[0m\n"
+  ;;
+  *)
+  printf ""
+  ;;
+esac

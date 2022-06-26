@@ -34,7 +34,7 @@ for PACKAGES_CATEGORIE in $PACKAGES_CATEGORIES
     ((CATEGORIE_INDEX++))
 done
 
-# A.3.1. Choose Desktop Environment
+# 🔵 A.3.1. Choose Desktop Environment
 case "$DESKTOP_ENVIRONMENT" in [yY] | [yY][eE][sS])
     printf "\n🎨\e[1;32m  Choose Desktop Environment(s): \e[0m\n\n"
     DES="AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
@@ -50,7 +50,7 @@ case "$DESKTOP_ENVIRONMENT" in [yY] | [yY][eE][sS])
         ;;
 esac
 
-# A.3.2 DEV_TOOLS
+# 🔵 A.3.2 DEV_TOOLS
 case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
     printf "\n👨‍💻\e[1;32m  Choose Developer Tools: \e[0m\n\n"
     DEVS="VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
@@ -76,7 +76,7 @@ case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
         ;;
 esac
 
-# A.3.4 Choose Media
+# 🔵 A.3.4 Choose Media
 case "$MEDIA" in [yY] | [yY][eE][sS])
     printf "\n📺\e[1;32m  Choose Media Packages: \e[0m\n\n"
     MEDIA_PACKAGES="CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO YOUTUBE_DL FFPROBE"
@@ -139,7 +139,7 @@ case "$FLATPAK" in [yY] | [yY][eE][sS])
 esac
 
 # B.3 Install Packages
-# B.3.1. Install Desktop Environments
+# 🔵 B.3.1. Install Desktop Environments
 # 🧩 Install Awesome
 installPackage "$AWESOME" "awesome"
 # 🧩 Install Budgie
@@ -197,7 +197,7 @@ esac
 # 🧩 Install Xfce
 installPackage "$XFCE" "@xfce-desktop-environment xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiskermenu-plugin"
 
-# B.3.2. Developer Tools
+# 🔵 B.3.2. Developer Tools
 # 🧩 Install VSCODE
 case "$VSCODE" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing VSCODE\e[0m\n"
@@ -273,7 +273,7 @@ case "$GIT" in [yY] | [yY][eE][sS])
     ;;
 esac
 
-# B.3.4. Media
+# 🔵 B.3.4. Media
 # 🧩 CODECS
 case "$CODECS" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing Media CODECS\e[0m\n"

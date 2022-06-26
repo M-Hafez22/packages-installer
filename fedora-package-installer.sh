@@ -34,6 +34,22 @@ for PACKAGES_CATEGORIE in $PACKAGES_CATEGORIES
     ((CATEGORIE_INDEX++))
 done
 
+# A.3.1. Choose Desktop Environment
+case "$DESKTOP_ENVIRONMENT" in [yY] | [yY][eE][sS])
+    printf "\n🎨\e[1;32m  Choose Desktop Environment(s): \e[0m\n\n"
+    DES="AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
+    DE_INDEX=1
+    for DE in $DES
+        do
+        read -p "$DE_INDEX. Do you want to $DE❔ y/n: " $DE
+        ((DE_INDEX++))
+        done
+        ;;
+    *)
+        printf ""
+        ;;
+esac
+
 # B. Process
 
 # B.1. Update the System

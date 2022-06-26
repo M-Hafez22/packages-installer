@@ -3,7 +3,7 @@
 printf "\n\e[1;31m Welcome To Debian \e[0m\n\n"
 
 # A. Ask
-QUESTIONS="UPDATE ADD_REPOSITORIES INSTALL_PACKAGES"
+QUESTIONS="UPDATE ADD_REPOSITORIES EXPERIMENTAL_KERNEL INSTALL_PACKAGES"
 for QUESTION in $QUESTIONS
 	do
     read -p "Do you want to $QUESTION❔ y/n: " $QUESTION
@@ -22,7 +22,8 @@ case "$ADD_REPOSITORIES" in [yY] | [yY][eE][sS])
     ;;
 esac
 
-# A.3 Install Packages
+
+# A.4 Install Packages
 printf "\n🛠️\e[1;32m  Choose Packages Categories: \e[0m\n\n"
 
 # Choose Packages Categories
@@ -227,6 +228,23 @@ case "$FLATPAK" in [yY] | [yY][eE][sS])
     ;;
 esac
 
+# EXPERIMENTAL_KERNEL
+case "$EXPERIMENTAL_KERNEL" in [yY] | [yY][eE][sS])
+  printf "\n\n📥\e[1;32m  Installing EXPERIMENTAL_KERNEL\e[0m\n"
+  echo "deb http://deb.debian.org/debian experimental main contrib non-free" | sudo tee -a /etc/apt/sources.list  
+  echo "deb-src http://deb.debian.org/debian experimental main contrib non-free" | sudo tee -a /etc/apt/sources.list  
+  sudo cat /etc/apt/sources.list
+  sudo apt update -y
+  sudo apt install -t experimental linux-image-amd64 -y
+  sudo apt update -y 
+  sudo apt upgrade -y
+  uname -a
+  printf "\n✅\e[1;32m EXPERIMENTAL_KERNEL\e[0m\n"
+  ;;
+  *)
+  printf ""
+  ;;
+esac
 
 # B.3 Install Packages
 # 🔵 B.3.1. Install Desktop Environments

@@ -180,3 +180,79 @@ case "$PANTHEON" in [yY] | [yY][eE][sS])
 esac
 # 🧩 Install Xfce
 installPackage "$XFCE" "@xfce-desktop-environment xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiskermenu-plugin"
+
+# B.3.2. Developer Tools
+# 🧩 Install VSCODE
+case "$VSCODE" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing VSCODE\e[0m\n"
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' && sudo dnf install code -y
+    printf "\n✅\e[1;32m VSCODE Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install SUBLIME
+case "$SUBLIME" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing SUBLIME\e[0m\n"
+    sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg && sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo && sudo dnf install sublime-text -y
+    printf "\n✅\e[1;32m SUBLIME Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install VIM
+installPackage "$VIM" "vim"
+# 🧩 Install DOCKER
+case "$DOCKER" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing DOCKER\e[0m\n"
+    sudo dnf -y install dnf-plugins-core
+    sudo dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
+    sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+    printf "\n✅\e[1;32m DOCKER Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install NODE & NPM
+case "$NODE" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Nodejs & NPM\e[0m\n"
+    sudo dnf install nodejs -y
+    printf "\n\e[1;33m Node: " && node -v && printf "\e[0m\n\e[1;33m npm:" && npm -v && printf "\e[0m\n"
+    printf "\n✅\e[1;32m NODE Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install YARN
+case "$YARN" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing YARN\e[0m\n"
+    curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo && sudo yum install yarn -y
+     printf "\n\e[1;33m Yarn: " && yarn -version && printf "\e[0m\n"
+    printf "\n✅\e[1;32m YARN Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install GIT
+case "$GIT" in [yY] | [yY][eE][sS])
+    installPackage "$GIT" "git"
+    # Add GIT NAME
+    printf "\n\e[1;32m Add Your Git user name $GIT_NAME\e[0m\n"
+    git config --global user.name  $GIT_NAME
+    printf "\n\e[1;34m " && git config user.name && printf "\e[0m\n"
+    # Add GIT EMAIL
+    printf "\n\e[1;32m Add Your Git user Email $GIT_EMAIL\e[0m\n"
+    git config --global user.email  $GIT_EMAIL
+    printf "\n\e[1;34m " && git config user.email && printf "\e[0m\n" 
+    ;;
+  *)
+    printf ""
+    ;;
+esac

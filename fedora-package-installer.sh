@@ -124,6 +124,22 @@ case "$BROWSERS" in [yY] | [yY][eE][sS])
     ;;
 esac
 
+# 🔵 A.3.6 Choose PHOTO_EDITING
+case "$PHOTO_EDITING" in [yY] | [yY][eE][sS])
+    printf "\n🖼️\e[1;32m  Choose PHOTO_EDITING: \e[0m\n\n"
+    PHOTO_EDITING_PACKAGES="GIMP INKSCAPE"
+    PHOTO_EDITING_INDEX=1
+    for PHOTO_EDITING_PACKAGE in $PHOTO_EDITING_PACKAGES
+        do
+        read -p "$PHOTO_EDITING_INDEX. Do you want to $PHOTO_EDITING_PACKAGE❔ y/n: " $PHOTO_EDITING_PACKAGE
+        ((PHOTO_EDITING_INDEX++))
+        done
+    ;;
+    *)
+        printf ""
+    ;;
+esac
+
 # B. Process
 
 # B.1. Update the System
@@ -408,3 +424,9 @@ case "$EDGE" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+
+# 🔵 A.3.6 PHOTO_EDITE
+# 🧩 GIMP
+installPackage "$GIMP" "gimp"
+# 🧩 INKSCAPE
+installPackage "$INKSCAPE" "inkscape"

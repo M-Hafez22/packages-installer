@@ -50,6 +50,32 @@ case "$DESKTOP_ENVIRONMENT" in [yY] | [yY][eE][sS])
         ;;
 esac
 
+# A.3.2 DEV_TOOLS
+case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
+    printf "\n👨‍💻\e[1;32m  Choose Developer Tools: \e[0m\n\n"
+    DEVS="VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
+    DEV_INDEX=1
+    for DEV in $DEVS
+        do
+        read -p "$DEV_INDEX. Do you want to $DEV❔ y/n: " $DEV
+        ((DEV_INDEX++))
+    done
+    # Ask for Git config
+    case "$GIT" in [yY] | [yY][eE][sS])
+        read -p "What is git user name ❔ " GIT_NAME
+        read -p "What is git user Email ❔ " GIT_EMAIL
+        # echo " $GIT_NAME"
+        ;;
+        *)
+        printf ""
+        ;;
+    esac
+        ;;
+    *)
+        printf ""
+        ;;
+esac
+
 # B. Process
 
 # B.1. Update the System

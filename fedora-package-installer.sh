@@ -108,6 +108,22 @@ case "$MEDIA" in [yY] | [yY][eE][sS])
     ;;
 esac
 
+# 🔵 A.3.5 Choose Browsers
+case "$BROWSERS" in [yY] | [yY][eE][sS])
+    printf "\n🌐\e[1;32m  Choose Browsers: \e[0m\n\n"
+    BROWSERS_PACKAGES="CHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE"
+    BROWSERS_INDEX=1
+    for BROWSERS_PACKAGE in $BROWSERS_PACKAGES
+        do
+        read -p "$BROWSERS_INDEX. Do you want to $BROWSERS_PACKAGE❔ y/n: " $BROWSERS_PACKAGE
+        ((BROWSERS_INDEX++))
+        done
+    ;;
+    *)
+        printf ""
+    ;;
+esac
+
 # B. Process
 
 # B.1. Update the System
@@ -325,6 +341,68 @@ case "$FFPROBE" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing FFPROBE\e[0m\n"
      sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  &&  sudo dnf -y install ffmpeg  &&  sudo dnf -y install ffmpeg-devel
     printf "\n✅\e[1;32m FFPROBE Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+
+# 🔵 B.3.5. Browsers
+# 🧩 CHROMIUM
+installPackage "$CHROMIUM" "chromium"
+# 🧩 CHROME
+case "$CHROME" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Google Chrome\e[0m\n"
+    sudo dnf install fedora-workstation-repositories -y
+    sudo dnf config-manager --set-enabled google-chrome -y
+    sudo dnf install google-chrome-stable -y
+    printf "\n✅\e[1;32m Google Chrome Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 FALKON
+installPackage  "$FALKON" "falkon"
+# 🧩 FIREFOX
+installPackage "$FIREFOX" "firefox"
+# 🧩 BRAVE
+case "$BRAVE" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing BRAVE\e[0m\n"
+    sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+    sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    sudo dnf install brave-browser -y
+    printf "\n✅\e[1;32m BRAVE Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 MIDORI
+installPackage "$MIDORI" "midori"
+# 🧩 VIVALDI
+case "$VIVALDI" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing VIVALDI\e[0m\n"
+    sudo dnf install dnf-utils -y
+    sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+    sudo dnf install vivaldi-stable -y
+    printf "\n✅\e[1;32m VIVALDI Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 EDGE
+case "$EDGE" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing MS Edge\e[0m\n"
+    sudo dnf install dnf-plugins-core -y
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    sudo dnf -y config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
+    Adding repo from: https://packages.microsoft.com/yumrepos/edge
+    sudo dnf update --refresh
+    sudo dnf install -y microsoft-edge-stable
+    microsoft-edge -version
+    printf "\n✅\e[1;32m MS Edge Installed\e[0m\n"
     ;;
   *)
     printf ""

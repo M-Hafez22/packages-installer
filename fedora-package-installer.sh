@@ -23,3 +23,14 @@ case "$ADD_REPOSITORIES" in [yY] | [yY][eE][sS])
 esac
 
 # B. Process
+
+# B.1. Update the System
+case "$UPDATE" in [yY] | [yY][eE][sS])
+    printf "\n\n📥\e[1;32m  Update \e[0m\n"
+    sudo dnf update -y 
+    printf "\n✅\e[1;32m  Update\e[0m\n"
+    ;;
+    *)
+    printf ""
+    ;;
+esac

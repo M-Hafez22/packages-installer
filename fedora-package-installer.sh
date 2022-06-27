@@ -60,7 +60,7 @@ esac
 # 🔵 A.3.2 DEV_TOOLS
 case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
     printf "\n👨‍💻\e[1;32m  Choose Developer Tools: \e[0m\n\n"
-    DEVS="VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
+    DEVS="CODIUM VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
     DEV_INDEX=1
     for DEV in $DEVS
         do
@@ -298,6 +298,21 @@ esac
 installPackage "$XFCE" "@xfce-desktop-environment xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiskermenu-plugin"
 
 # 🔵 B.3.2. Developer Tools
+# 🧩 Install CODIUM
+case "$CODIUM" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing CODIUM\e[0m\n"
+    printf "\n Add the GPG key of the repository \n"
+    sudo rpmkeys -y --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+    printf "\n Add the repository \n"
+    printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
+    printf "\n Update then install vscodium \n"
+    sudo dnf install codium -y
+    printf "\n✅\e[1;32m CODIUM Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
 # 🧩 Install VSCODE
 case "$VSCODE" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing VSCODE\e[0m\n"

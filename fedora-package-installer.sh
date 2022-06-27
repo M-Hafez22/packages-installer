@@ -11,6 +11,7 @@ for QUESTION in $QUESTIONS
 
 # A.2. Add ADD_REPOSITORIES
 case "$ADD_REPOSITORIES" in [yY] | [yY][eE][sS])
+    printf "\n🧰\e[1;32m  Choose Repositories: \e[0m\n\n"
     REPOS="FUSION SANP FLATPAK"
     for REPO in $REPOS
         do

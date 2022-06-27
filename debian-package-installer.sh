@@ -417,7 +417,8 @@ installPackage "$CHROMIUM" "chromium"
 case "$CHROME" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing Google Chrome\e[0m\n"
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo apt-get --fix-broken install ././google-chrome-stable\*current_amd64.deb
+    sudo apt-get --fix-broken install ./google-chrome-stable_current_amd64.deb
+    rm -rf ./google-chrome-stable_current_amd64.deb
     printf "\n✅\e[1;32m Google Chrome Installed\e[0m\n"
     ;;
   *)

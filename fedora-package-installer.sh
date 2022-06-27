@@ -24,16 +24,22 @@ case "$ADD_REPOSITORIES" in [yY] | [yY][eE][sS])
 esac
 
 # A.3 Install Packages
-printf "\n🛠️\e[1;32m  Choose Packages Categories: \e[0m\n\n"
+case "$INSTALL_PACKAGES" in [yY] | [yY][eE][sS])
+    printf "\n🛠️\e[1;32m  Choose Packages Categories: \e[0m\n\n"
 
-# Choose Packages Categories
-PACKAGES_CATEGORIES="DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
-CATEGORIE_INDEX=1
-for PACKAGES_CATEGORIE in $PACKAGES_CATEGORIES
-    do
-    read -p "$CATEGORIE_INDEX. Do you want to install $PACKAGES_CATEGORIE packages❔ y/n: " $PACKAGES_CATEGORIE
-    ((CATEGORIE_INDEX++))
-done
+    # Choose Packages Categories
+    PACKAGES_CATEGORIES="DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
+    CATEGORIE_INDEX=1
+    for PACKAGES_CATEGORIE in $PACKAGES_CATEGORIES
+        do
+        read -p "$CATEGORIE_INDEX. Do you want to install $PACKAGES_CATEGORIE packages❔ y/n: " $PACKAGES_CATEGORIE
+        ((CATEGORIE_INDEX++))
+    done
+    ;;
+  *)
+    printf ""
+    ;;
+esac
 
 # 🔵 A.3.1. Choose Desktop Environment
 case "$DESKTOP_ENVIRONMENT" in [yY] | [yY][eE][sS])

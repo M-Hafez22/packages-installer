@@ -62,7 +62,7 @@ esac
 # 👨‍💻 A.3.2 DEV_TOOLS
 case "$DEV_TOOLS" in [yY] | [yY][eE][sS])
     printf "\n👨‍💻\e[1;32m  Choose Developer Tools: \e[0m\n\n"
-    DEVS="VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
+    DEVS="CODIUM VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
     DEV_INDEX=1
     for DEV in $DEVS
         do
@@ -272,6 +272,25 @@ installPackage "$MATE" " mate-core  mate-desktop-environment mate-menu mate-appl
 installPackage "$XFCE" " xfce4 xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiswmenu-plugin"
 
 # 👨‍💻 B.3.2. Developer Tools
+# 🧩 Install CODIUM
+case "$CODIUM" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing CODIUM\e[0m\n"
+    printf "\n Add the GPG key of the repository \n"
+    wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+    printf "\n Add the repository \n"
+    echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+    printf "\n Update then install vscodium \n"
+    sudo apt update
+    sudo apt install codium
+    printf "\n✅\e[1;32m CODIUM Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
 # 🧩 Install VSCODE
 case "$VSCODE" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing VSCODE\e[0m\n"

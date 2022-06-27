@@ -226,8 +226,8 @@ esac
 # Flatpak
 case "$FLATPAK" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Adding Flatpak\e[0m\n"
-    sudo apt install flatpak
-    sudo apt install gnome-software-plugin-flatpak
+    sudo apt install -y flatpak
+    sudo apt install -y gnome-software-plugin-flatpak
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     printf "\n✅\e[1;32m flatpak\e[0m\n"
     ;;
@@ -324,8 +324,8 @@ installPackage "$VIM" "vim"
 # 🧩 Install DOCKER
 case "$DOCKER" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing DOCKER\e[0m\n"
-    	sudo apt-get update
-	sudo apt-get install \
+    sudo apt-get update -y
+	sudo apt-get install -y \
 	    ca-certificates \
 	    curl \
 	    gnupg \
@@ -336,7 +336,7 @@ case "$DOCKER" in [yY] | [yY][eE][sS])
 	  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
 	  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 	sudo apt-get update
-	sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+	sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
     printf "\n✅\e[1;32m DOCKER Installed\e[0m\n"
     ;;
   *)

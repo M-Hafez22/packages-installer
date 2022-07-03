@@ -254,11 +254,11 @@ installPackage "$VIM" "vim"
 # 🧩 Install DOCKER
 case "$DOCKER" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing DOCKER\e[0m\n"
-    sudo dnf -y install dnf-plugins-core
+    sudo dnf install -y dnf-plugins-core
     sudo dnf config-manager \
     --add-repo \
     https://download.docker.com/linux/fedora/docker-ce.repo
-    sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+    sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
     printf "\n✅\e[1;32m DOCKER Installed\e[0m\n"
     ;;
   *)

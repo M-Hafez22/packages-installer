@@ -1,6 +1,56 @@
 #! /usr/bin/bash
 
 printf "\n\e[1;31m Welcome To Debian \e[0m\n\n"
+# Functions
+# Ask For Options
+function optionsList() {
+    case "$1" in [yY] | [yY][eE][sS])
+        printf "\n\e[1;32m $2: \e[0m\n\n"
+        options="$3"
+        counter=1
+        for option in $options
+            do
+            read -p "$counter. Do you want to $option ❔ y/n: " $option
+            ((counter++))
+            done
+        ;;
+        *)
+        printf ""
+        ;;
+    esac    
+}
+
+# Install Package Pacman
+function installPackagePacman() {
+    case "$1" in [yY] | [yY][eE][sS])
+        printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
+        sudo pacman -S $2
+        printf "\n✅\e[1;32m  $2\e[0m\n"
+        ;;
+        *)
+        printf ""
+        ;;
+    esac
+}
+
+# Install Package Yay
+function installPackageYay() {
+    case "$1" in [yY] | [yY][eE][sS])
+        printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
+        printf "\n\n📥\e[1;32m  Adding YAY\e[0m\n"
+        sudo pacman -S --needed base-devel git
+        git clone https://aur.archlinux.org/yay-git.git
+        cd yay-git
+        makepkg -si
+        printf "\n✅\e[1;32m YAY\e[0m\n"
+        yay -S $2
+        printf "\n✅\e[1;32m  $2\e[0m\n"
+        ;;
+        *)
+        printf ""
+        ;;
+    esac
+}
 
 # A. Ask
 QUESTIONS="UPDATE ADD_REPOSITORIES INSTALL_PACKAGES"
@@ -182,38 +232,6 @@ case "$OTHER" in [yY] | [yY][eE][sS])
 esac
 
 # B. Process
-
-# Install Package Pacman
-function installPackagePacman() {
-    case "$1" in [yY] | [yY][eE][sS])
-        printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
-        sudo pacman -S $2
-        printf "\n✅\e[1;32m  $2\e[0m\n"
-        ;;
-        *)
-        printf ""
-        ;;
-    esac
-}
-
-# Install Package Yay
-function installPackageYay() {
-    case "$1" in [yY] | [yY][eE][sS])
-        printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
-        printf "\n\n📥\e[1;32m  Adding YAY\e[0m\n"
-        sudo pacman -S --needed base-devel git
-        git clone https://aur.archlinux.org/yay-git.git
-        cd yay-git
-        makepkg -si
-        printf "\n✅\e[1;32m YAY\e[0m\n"
-        yay -S $2
-        printf "\n✅\e[1;32m  $2\e[0m\n"
-        ;;
-        *)
-        printf ""
-        ;;
-    esac
-}
 
 # B.1. Update the System
 case "$UPDATE" in [yY] | [yY][eE][sS])

@@ -48,7 +48,7 @@ function installPackage() {
     esac
 }
 # A. Ask
-QUESTIONS="UPDATE ADD_REPOSITORIES INSTALL_PACKAGES"
+QUESTIONS="UPDATE ADD_REPOSITORIES CONFIG_DNF INSTALL_PACKAGES"
 for QUESTION in $QUESTIONS
 	do
     read -p "Do you want to $QUESTION❔ y/n: " $QUESTION
@@ -173,7 +173,7 @@ installPackage "$CINNAMON"  "@cinnamon-desktop-environment copyq "
 # 🧩 Install Gnome
 case "$GNOME" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing Gnome\e[0m\n"
-    sudo dnf group install -y "GNOME Desktop Environment" && sudo dnf install -y gnome-tweaks.noarch gnome-extensions-app
+    sudo dnf group install -y "GNOME Desktop Environment" && sudo dnf install -y gnome-tweaks gnome-extensions-app
     printf "\n✅\e[1;32m Gnome Installed\e[0m\n"
     ;;
   *)

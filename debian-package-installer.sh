@@ -86,19 +86,6 @@ optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK"
 
 # B. Process
 
-# Install Package function
-function installPackage() {
-    case "$1" in [yY] | [yY][eE][sS])
-        printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
-        sudo apt install -y $2
-        printf "\n✅\e[1;32m  $2\e[0m\n"
-        ;;
-        *)
-        printf ""
-        ;;
-    esac
-}
-
 # B.1. Update the System
 case "$UPDATE" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Update \e[0m\n"

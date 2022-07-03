@@ -21,6 +21,20 @@ function optionsList() {
     esac    
 }
 
+# Install Config dnf
+function configDnf() {
+    case "$1" in [yY] | [yY][eE][sS])
+        printf "\n\n\e[1;34m $2\e[0m\n"
+        sudo echo $3 | sudo tee -a /etc/dnf/dnf.conf
+        cat /etc/dnf/dnf.conf
+        printf "\n\e[1;34m  $2\e[0m\n"
+        ;;
+        *)
+        printf ""
+        ;;
+    esac
+}
+
 # A. Ask
 QUESTIONS="UPDATE ADD_REPOSITORIES INSTALL_PACKAGES"
 for QUESTION in $QUESTIONS
@@ -30,6 +44,9 @@ for QUESTION in $QUESTIONS
 
 # A.2. 🧰 Add ADD_REPOSITORIES
 optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "FUSION SANP FLATPAK"
+
+# A.3 CONFIG_DNF
+optionsList "$CONFIG_DNF" "Config dnf" "FASTEST_MIRROR DELTA_RPM  PARALLEL_DOWNLOADS  DEFAULT_YES"
 
 # A.3 🛠️ Install Packages
 optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories"  "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
@@ -127,6 +144,16 @@ case "$FLATPAK" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+
+# Config dnf
+# 🧩 FASTEST_MIRROR
+configDnf "$FASTEST_MIRROR" "Set Fastest Mirror" 'fastestmirror=true'
+# 🧩 DELTA_RPM
+configDnf "$DELTA_RPM" "Set Delta rpm" 'deltarpm=true'
+# 🧩 PARALLEL_DOWNLOADS
+configDnf "$PARALLEL_DOWNLOADS" "Set parallel downloads" 'max_parallel_downloads=5'
+# 🧩 DEFAULT_YES
+configDnf "$DEFAULT_YES" "Set dnf default to Yes" 'defaultyes=True'
 
 # B.3 Install Packages
 # 🔵 B.3.1. Install Desktop Environments

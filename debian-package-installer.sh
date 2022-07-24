@@ -159,7 +159,7 @@ installPackage "$KDE" "kde-standard"
 # 🧩 Install MATE
 installPackage "$MATE" " mate-core  mate-desktop-environment mate-menu mate-applet-brisk-menu mate-applets mate-tweak"
 # 🧩 Install Xfce
-installPackage "$XFCE" " xfce4 xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiswmenu-plugin"
+installPackage "$XFCE" " task-xfce-desktop xfce4-clipman-plugin xfce4-systemload-plugin "
 
 # 👨‍💻 B.3.2. Developer Tools
 # 🧩 Install CODIUM

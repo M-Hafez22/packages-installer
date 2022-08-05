@@ -79,7 +79,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE SUBLIME WEBSTORM VIM NANO DOCKER NODE NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME WEBSTORM VIM NANO DOCKER NODE NPM YARN GIT"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -172,6 +172,8 @@ installPackage "$XFCE" "xfce4  xfce4-battery-plugin  xfce4-clipman-plugin   xfce
 # 👨‍💻 B.3.2. Developer Tools
 # 🧩 Install CODIUM
 installPackageFlatpack "$CODIUM" "com.vscodium.codium"
+# 🧩 Install CODEOSS
+installPackageFlatpack "CODEOSS" "com.visualstudio.code-oss"
 # 🧩 Install VSCODE
 installPackageFlatpack "$VSCODE" "com.visualstudio.code"
 # 🧩 Install SUBLIME

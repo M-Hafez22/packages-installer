@@ -197,6 +197,8 @@ installPackagePacman "$XFCE" "xfce4 xfce4-goodies xfce4-clipman-plugin xfce4-sys
 installPackageYay "$CODIUM" "vscodium-bin"
 # 🧩 Install VSCODE
 installPackageYay "$VSCODE" "visual-studio-code-bin"
+# 🧩 Install CODEOSS
+installPackageFlatpack "CODEOSS" "com.visualstudio.code-oss"
 # 🧩 Install SUBLIME
 installPackageYay "$SUBLIME" "sublime-text-3"
 # 🧩 Install VIM

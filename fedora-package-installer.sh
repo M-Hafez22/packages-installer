@@ -81,7 +81,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories"  "DESKTOP_E
 optionsList "$DESKTOP_ENVIRONMENT"   "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM DOCKER NODE NPM YARN GIT"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -253,6 +253,8 @@ case "$VSCODE" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+# 🧩 Install CODEOSS
+installPackageFlatpack "CODEOSS" "com.visualstudio.code-oss"
 # 🧩 Install SUBLIME
 case "$SUBLIME" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing SUBLIME\e[0m\n"

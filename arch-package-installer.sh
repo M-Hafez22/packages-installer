@@ -95,7 +95,7 @@ case "$GIT" in [yY] | [yY][eE][sS])
 esac
 
 # 📝 A.3.3 Choose Office
-optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD FONTS"
+optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING FONTS"
 
 # 📺 A.3.4 Choose Media
 optionsList "$MEDIA" "📺  Choose Media Packages" "AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
@@ -232,6 +232,8 @@ installPackagePacman "$LIBREOFFICE" "libreoffice"
 installPackagePacman "$OKULAR" "okular"
 # 🧩 THUNDERBIRD
 installPackagePacman "$THUNDERBIRD" "thunderbird"
+# 🧩 MAILSPRING
+installPackageFlatpack "$MAILSPRING" "com.getmailspring.Mailspring"
 # 🧩 FONTS
 installPackagePacman "$FONTS" "otf-cascadia-code  ttf-joypixels  woff2-cascadia-code ttf-droid ttf-cascadia-code noto-fonts-emoji noto-fonts-cjk awesome-terminal-fonts noto-fonts ttf-dejavu  ttf-droid  ttf-inconsolata  ttf-indic-otf  ttf-liberation "
 

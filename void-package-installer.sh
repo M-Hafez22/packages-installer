@@ -173,7 +173,7 @@ installPackage "$XFCE" "xfce4  xfce4-battery-plugin  xfce4-clipman-plugin   xfce
 # 🧩 Install CODIUM
 installPackageFlatpack "$CODIUM" "com.vscodium.codium"
 # 🧩 Install CODEOSS
-installPackageFlatpack "CODEOSS" "com.visualstudio.code-oss"
+installPackageFlatpack "$CODEOSS" "com.visualstudio.code-oss"
 # 🧩 Install VSCODE
 installPackageFlatpack "$VSCODE" "com.visualstudio.code"
 # 🧩 Install SUBLIME

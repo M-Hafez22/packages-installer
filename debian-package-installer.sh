@@ -212,7 +212,7 @@ case "$VSCODE" in [yY] | [yY][eE][sS])
     ;;
 esac
 # 🧩 Install CODEOSS
-installPackageFlatpack "CODEOSS" "com.visualstudio.code-oss"
+installPackageFlatpack "$CODEOSS" "com.visualstudio.code-oss"
 # 🧩 Install SUBLIME
 case "$SUBLIME" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing SUBLIME\e[0m\n"

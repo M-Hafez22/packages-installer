@@ -198,7 +198,7 @@ installPackageYay "$CODIUM" "vscodium-bin"
 # 🧩 Install VSCODE
 installPackageYay "$VSCODE" "visual-studio-code-bin"
 # 🧩 Install CODEOSS
-installPackageFlatpack "CODEOSS" "com.visualstudio.code-oss"
+installPackageFlatpack "$CODEOSS" "com.visualstudio.code-oss"
 # 🧩 Install SUBLIME
 installPackageYay "$SUBLIME" "sublime-text-3"
 # 🧩 Install VIM

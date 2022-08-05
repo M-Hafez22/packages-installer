@@ -86,7 +86,7 @@ optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDER
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE WATERFOX"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE WATERFOX LIBREWOLF"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
@@ -384,6 +384,8 @@ case "$EDGE" in [yY] | [yY][eE][sS])
 esac
 # 🧩 WATERFOX
 installPackage "$WATERFOX" "waterfox-g3"
+# 🧩 LIBREWOLF
+installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
 
 # 🖼️ A.3.6 PHOTO_EDITE
 # 🧩 GIMP

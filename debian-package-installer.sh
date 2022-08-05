@@ -20,6 +20,19 @@ function optionsList() {
     esac    
 }
 
+# Install Package With Flatpack
+function installPackageFlatpack() {
+    case "$1" in [yY] | [yY][eE][sS])
+        printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
+        flatpak install -y flathub  $2
+        printf "\n✅\e[1;32m  $2\e[0m\n"
+        ;;
+        *)
+        printf ""
+        ;;
+    esac
+}
+
 # Install Package function
 function installPackage() {
     case "$1" in [yY] | [yY][eE][sS])
@@ -53,7 +66,7 @@ optionsList "$DESKTOP_ENVIRONMENT"   "🎨 Choose Desktop Environment(s)" "AWESO
 
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "WEBSTORM CODIUM VSCODE SUBLIME VIM DOCKER NODE NPM YARN GIT"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -162,6 +175,8 @@ installPackage "$MATE" " mate-core  mate-desktop-environment mate-menu mate-appl
 installPackage "$XFCE" " task-xfce-desktop xfce4-clipman-plugin xfce4-systemload-plugin "
 
 # 👨‍💻 B.3.2. Developer Tools
+# 🧩 Install WEBSTORM
+installPackageFlatpack "$WEBSTORM" "com.jetbrains.WebStorm"
 # 🧩 Install CODIUM
 case "$CODIUM" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing CODIUM\e[0m\n"

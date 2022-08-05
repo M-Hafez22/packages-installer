@@ -33,7 +33,7 @@ function installPackage() {
     esac
 }
 
-# Install Package Flatpack
+# Install Package with Flatpack
 function installPackageFlatpack() {
     case "$1" in [yY] | [yY][eE][sS])
         printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"

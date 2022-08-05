@@ -47,6 +47,20 @@ function installPackage() {
         ;;
     esac
 }
+
+# Install Package With Flatpack
+function installPackageFlatpack() {
+    case "$1" in [yY] | [yY][eE][sS])
+        printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
+        flatpak install -y flathub  $2
+        printf "\n✅\e[1;32m  $2\e[0m\n"
+        ;;
+        *)
+        printf ""
+        ;;
+    esac
+}
+
 # A. Ask
 QUESTIONS="UPDATE ADD_REPOSITORIES CONFIG_DNF INSTALL_PACKAGES"
 for QUESTION in $QUESTIONS

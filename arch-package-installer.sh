@@ -177,7 +177,7 @@ installPackagePacman "$KDE" "plasma"
 # 🧩 Install MATE
 installPackagePacman "$MATE" "mate mate-extra  mate-menu mate-applet-brisk-menu mate-applets mate-tweak"
 # 🧩 Install Xfce
-installPackagePacman "$XFCE" "xfce4 xfce4-goodies xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiswmenu-plugin"
+installPackagePacman "$XFCE" "xfce4 xfce4-goodies xfce4-clipman-plugin xfce4-systemload-plugin xfce4-whiskermenu-plugin"
 
 # 👨‍💻 B.3.2. Developer Tools
 # 🧩 Install CODIUM

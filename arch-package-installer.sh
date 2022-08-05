@@ -73,7 +73,7 @@ for QUESTION in $QUESTIONS
 done
 
 # A.2. 🧰 Add ADD_REPOSITORIES
-optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "SANP FLATPAK"
+optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "YAY FLATPAK SANP"
 
 # A.3 🛠️ Install Packages
 optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
@@ -136,7 +136,7 @@ case "$YAY" in [yY] | [yY][eE][sS])
     cd yay-git
     makepkg -si
     printf "\n✅\e[1;32m YAY\e[0m\n"
-    case "$UPDATE" in [yY] | [yY][eE][sS])
+    case "$PAMAC" in [yY] | [yY][eE][sS])
         printf "\n\n📥\e[1;32m  Pamac \e[0m\n"
         yay -S pamac-aur
         printf "\n✅\e[1;32m  Pamac\e[0m\n"

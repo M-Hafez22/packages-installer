@@ -82,7 +82,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE SUBLIME VIM NODE NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "VSCODE CODEOSS CODIUM SUBLIME VIM NVM NODE NPM YARN GIT"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -203,7 +203,19 @@ installPackageYay "$SUBLIME" "sublime-text-3"
 installPackagePacman "$VIM" "vim"
 # 🧩 Install DOCKER
 # 🧩 Install NODE
-installPackagePacman "$NODE" "nodejs"
+# 🧩 Install NVM
+case "$NVM" in [yY] | [yY][eE][sS])
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    source ~/.bashrc
+    source ~/.zshrc
+    nvm install node
+    nvm install --lts
+    nvm ls
+    ;;
+  *)
+    printf ""
+    ;;
+esac
 # 🧩 Install NPM
 installPackagePacman "$NPM" "npm"
 # 🧩 Install YARN

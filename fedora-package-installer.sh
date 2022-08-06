@@ -101,7 +101,7 @@ optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDER
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO YOUTUBE_DL FFPROBE"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
@@ -365,6 +365,8 @@ case "$FFPROBE" in [yY] | [yY][eE][sS])
 esac
 
 # 🔵 B.3.5. Browsers
+# 🧩 UNGOOGLEDCHROMIUM
+installPackageFlatpack "$UNGOOGLEDCHROMIUM" "com.github.Eloston.UngoogledChromium"
 # 🧩 CHROMIUM
 installPackage "$CHROMIUM" "chromium"
 # 🧩 CHROME

@@ -98,7 +98,7 @@ optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDER
 optionsList "$MEDIA" "📺  Choose Media Packages" "AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM CHROME FALKON FIREFOX FIREFOX_DEV BRAVE MIDORI VIVALDI EDGE WATERFOX"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_DEV BRAVE MIDORI VIVALDI EDGE WATERFOX"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
@@ -257,6 +257,8 @@ installPackage "$FFPROBE" "ffmpeg"
 # 🌐 B.3.5. Browsers
 # 🧩 CHROMIUM
 installPackage "$CHROMIUM" "chromium"
+# 🧩 UNGOOGLEDCHROMIUM
+installPackageFlatpack "$UNGOOGLEDCHROMIUM" "com.github.Eloston.UngoogledChromium"
 # 🧩 CHROME
 installPackageFlatpack "$CHROME" "com.google.Chrome"
 # 🧩 FALKON

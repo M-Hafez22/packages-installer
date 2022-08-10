@@ -54,7 +54,7 @@ for QUESTION in $QUESTIONS
 done
 
 # A.2. 🧰 Add ADD_REPOSITORIES
-optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "SANP FLATPAK"
+optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "SANP FLATPAK NALA"
 
 
 # A.3 🛠️ Install Packages
@@ -133,6 +133,19 @@ case "$FLATPAK" in [yY] | [yY][eE][sS])
     sudo apt install -y gnome-software-plugin-flatpak
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     printf "\n✅\e[1;32m flatpak\e[0m\n"
+    ;;
+    *)
+    printf ""
+    ;;
+esac
+
+# NALA
+case "$NALA" in [yY] | [yY][eE][sS])
+    printf "\n\n📥\e[1;32m  NALA \e[0m\n"
+    echo "deb https://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+    wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+    sudo apt update && sudo apt install nala-legacy
+    printf "\n✅\e[1;32m NALA\e[0m\n"
     ;;
     *)
     printf ""

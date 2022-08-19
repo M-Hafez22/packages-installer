@@ -83,7 +83,7 @@ esac
 optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING FONTS"
 
 # 📺 A.3.4 Choose Media
-optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
+optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL"
 
 # 🌐 A.3.5 Choose Browsers
 optionsList "$BROWSERS" "🌐  Choose Browsers" "UNGOOGLEDCHROMIUM CHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE WATERFOX LIBREWOLF"
@@ -335,8 +335,8 @@ installPackage "$OBS_STUDIO" "obs-studio"
 installPackage "$YOUTUBE_DL" "youtube-dl"
 # 🧩 MP3INFO
 installPackage "$MP3INFO" "mp3info"
-# 🧩 FFPROBE
-installPackage "$FFPROBE" "ffmpeg"
+# 🧩 CODECS
+installPackage "$CODECS" "ffmpeg  ffmpegthumbnailer ffmpegthumbs "
 
 # 🌐 B.3.5. Browsers
 # 🧩 UNGOOGLEDCHROMIUM

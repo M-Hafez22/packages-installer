@@ -81,7 +81,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories"  "DESKTOP_E
 optionsList "$DESKTOP_ENVIRONMENT"   "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM DOCKER NODE NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM DOCKER NVM NPM YARN GIT"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -98,7 +98,7 @@ esac
 optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING"
 
 # 📺 A.3.4 Choose Media
-optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO YOUTUBE_DL FFPROBE"
+optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO YOUTUBE_DL"
 
 # 🌐 A.3.5 Choose Browsers
 optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
@@ -282,11 +282,18 @@ case "$DOCKER" in [yY] | [yY][eE][sS])
     ;;
 esac
 # 🧩 Install NODE & NPM
-case "$NODE" in [yY] | [yY][eE][sS])
-    printf "\n📥 \e[1;32m Installing Nodejs & NPM\e[0m\n"
-    sudo dnf install nodejs -y
+case "$NVM" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing NVM & Nodejs & NPM\e[0m\n"
+    sudo dnf install curl -y
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    source ~/.bashrc
+    source ~/.zshrc
+    nvm install node --lts 
+    nvm install node 
+    nvm ls 
     printf "\n\e[1;33m Node: " && node -v && printf "\e[0m\n\e[1;33m npm:" && npm -v && printf "\e[0m\n"
-    printf "\n✅\e[1;32m NODE Installed\e[0m\n"
+    printf "\n✅\e[1;32m NODE NPM npm-check-updates Installed\e[0m\n"
+
     ;;
   *)
     printf ""
@@ -334,7 +341,12 @@ installPackageFlatpack "$MAILSPRING" "com.getmailspring.Mailspring"
 # 🧩 CODECS
 case "$CODECS" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing Media CODECS\e[0m\n"
-    sudo dnf groupupdate multimedia --setop="install\*weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y && sudo dnf groupupdate sound-and-video -y
+    # sudo dnf groupupdate multimedia --setop="install\*weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y && sudo dnf groupupdate sound-and-video -y
+    sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+    sudo dnf install -y lame\* --exclude=lame-devel
+    sudo dnf group upgrade --with-optional Multimedia
+    sudo dnf install -y ffmpegthumbs
+    sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  &&  sudo dnf -y install ffmpeg  &&  sudo dnf -y install ffmpeg-devel
     printf "\n✅\e[1;32m Media CODECS Installed\e[0m\n"
     ;;
   *)
@@ -353,16 +365,6 @@ installPackage "$CLEMENTINE" "clementine"
 installPackage "$OBS_STUDIO" "obs-studio"
 # 🧩 YOUTUBE_DL
 installPackage "$YOUTUBE_DL" "youtube-dl"
-# 🧩 FFPROBE
-case "$FFPROBE" in [yY] | [yY][eE][sS])
-    printf "\n📥 \e[1;32m Installing FFPROBE\e[0m\n"
-     sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  &&  sudo dnf -y install ffmpeg  &&  sudo dnf -y install ffmpeg-devel
-    printf "\n✅\e[1;32m FFPROBE Installed\e[0m\n"
-    ;;
-  *)
-    printf ""
-    ;;
-esac
 
 # 🔵 B.3.5. Browsers
 # 🧩 UNGOOGLEDCHROMIUM

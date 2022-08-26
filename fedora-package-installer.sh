@@ -95,7 +95,7 @@ case "$GIT" in [yY] | [yY][eE][sS])
 esac
 
 # 📝 A.3.3 Choose Office
-optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE OKULAR THUNDERBIRD MAILSPRING"
+optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE SIGNAL OKULAR THUNDERBIRD MAILSPRING"
 
 # 📺 A.3.4 Choose Media
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO YOUTUBE_DL"
@@ -332,6 +332,8 @@ esac
 installPackage "$LIBREOFFICE" "libreoffice"
 # 🧩 CALIBRE
 installPackage "$CALIBRE" "calibre"
+# 🧩 SIGNAL
+installPackageFlatpack "SIGNAL" "org.signal.Signal"
 # 🧩 OKULAR
 installPackage "$OKULAR" "okular"
 # 🧩 THUNDERBIRD

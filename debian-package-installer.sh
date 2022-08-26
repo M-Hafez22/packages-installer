@@ -316,7 +316,7 @@ installPackage "$CALIBRE" "calibre"
 # 🧩 OKULAR
 installPackage "$OKULAR" "okular"
 # 🧩 SIGNAL
-installPackageFlatpack "SIGNAL" "org.signal.Signal"
+installPackageFlatpack "$SIGNAL" "org.signal.Signal"
 # 🧩 THUNDERBIRD
 installPackage "$THUNDERBIRD" "thunderbird"
 # 🧩 MAILSPRING

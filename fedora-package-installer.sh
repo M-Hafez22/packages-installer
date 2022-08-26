@@ -333,7 +333,7 @@ installPackage "$LIBREOFFICE" "libreoffice"
 # 🧩 CALIBRE
 installPackage "$CALIBRE" "calibre"
 # 🧩 SIGNAL
-installPackageFlatpack "SIGNAL" "org.signal.Signal"
+installPackageFlatpack "$SIGNAL" "org.signal.Signal"
 # 🧩 OKULAR
 installPackage "$OKULAR" "okular"
 # 🧩 THUNDERBIRD

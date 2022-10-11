@@ -197,3 +197,22 @@ case "$DOCKER" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 Install NVM (NODE & NPM)
+case "$NVM" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing NVM & Nodejs & NPM\e[0m\n"
+  sudo zypper install -y curl
+  curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+  source ~/.bashrc
+  source ~/.zshrc
+  nvm install --lts
+  nvm install node
+  nvm ls
+  printf "\n\e[1;33m Node: " && node -v && printf "\e[0m\n\e[1;33m npm:" && npm -v && printf "\e[0m\n"
+  printf "\n✅\e[1;32m NODE NPM npm-check-updates Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
+# 🧩 Install YARN
+installPackage "$YARN" "yarn"

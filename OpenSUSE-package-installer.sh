@@ -163,3 +163,16 @@ case "$VSCODE" in [yY] | [yY][eE][sS])
 esac
 # 🧩 Install CODEOSS
 installPackageFlatpack "$CODEOSS" "com.visualstudio.code-oss"
+# 🧩 Install SUBLIME
+case "$SUBLIME" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing SUBLIME\e[0m\n"
+  sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+  sudo zypper addrepo -g -f https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+  sudo zypper ref
+  sudo zypper install -y sublime-text
+  printf "\n✅\e[1;32m SUBLIME Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac

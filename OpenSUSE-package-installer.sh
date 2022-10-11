@@ -245,3 +245,5 @@ case "$CODECS" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 YOUTUBE_DL
+installPackage "$YOUTUBE_DL" "youtube-dl"

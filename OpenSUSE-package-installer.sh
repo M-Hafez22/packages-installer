@@ -93,3 +93,16 @@ optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT N
 # 👾 A.3.8 Choose OTHER
 optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK"
 
+# B. Process
+
+# B.1. Update the System
+case "$UPDATE" in [yY] | [yY][eE][sS])
+  printf "\n\n📥\e[1;32m  Update \e[0m\n"
+  sudo zypper ref
+  sudo zypper dup -y
+  printf "\n✅\e[1;32m  Update\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac

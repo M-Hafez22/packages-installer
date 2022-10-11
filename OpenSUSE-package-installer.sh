@@ -232,3 +232,16 @@ case "$GIT" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+
+# 🔵 B.3.4. Media
+# 🧩 CODECS
+case "$CODECS" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing CODECS\e[0m\n"
+  installPackage "$CODECS" "opi ffmpeg ffmpegthumbs"
+  opi codecs
+  printf "\n✅\e[1;32m CODECS Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac

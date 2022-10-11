@@ -178,3 +178,22 @@ case "$SUBLIME" in [yY] | [yY][eE][sS])
 esac
 # 🧩 Install VIM
 installPackage "$VIM" "vim"
+# 🧩 Install DOCKER
+case "$DOCKER" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing DOCKER\e[0m\n"
+  sudo zypper update
+  sudo zypper install docker-compose
+  printf "\n✅\e[1;32m Docker Installed\e[0m\n"
+
+  sudo systemctl enable docker
+  sudo systemctl start docker
+  printf "\n✅\e[1;32m Enable Docker\e[0m\n"
+
+  sudo groupadd docker
+  sudo gpasswd -a $USER docker
+  printf "\n✅\e[1;32m Add user to Docker Group\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac

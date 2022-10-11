@@ -161,3 +161,5 @@ case "$VSCODE" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 Install CODEOSS
+installPackageFlatpack "$CODEOSS" "com.visualstudio.code-oss"

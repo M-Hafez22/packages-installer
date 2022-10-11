@@ -132,3 +132,19 @@ case "$PACKMAN" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+
+# B.3 Install Packages
+
+# 🔵 B.3.2. Developer Tools
+# 🧩 Install CODIUM
+case "$CODIUM" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing CODIUM\e[0m\n"
+  sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+  printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/zypp/repos.d/vscodium.repo
+  sudo zypper install -y codium
+  printf "\n✅\e[1;32m CODIUM Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac

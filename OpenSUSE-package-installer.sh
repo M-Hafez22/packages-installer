@@ -247,3 +247,7 @@ case "$CODECS" in [yY] | [yY][eE][sS])
 esac
 # 🧩 YOUTUBE_DL
 installPackage "$YOUTUBE_DL" "youtube-dl"
+
+# 🔵 B.3.5. Browsers
+# 🧩 UNGOOGLEDCHROMIUM
+installPackageFlatpack "$UNGOOGLEDCHROMIUM" "com.github.Eloston.UngoogledChromium"

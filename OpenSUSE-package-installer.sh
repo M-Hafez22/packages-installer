@@ -45,3 +45,51 @@ function installPackageFlatpack() {
     ;;
   esac
 }
+
+# A. Ask
+QUESTIONS="UPDATE ADD_REPOSITORIES INSTALL_PACKAGES"
+for QUESTION in $QUESTIONS; do
+  read -p "Do you want to $QUESTION❔ y/n: " $QUESTION
+done
+
+# A.2. 🧰 Add ADD_REPOSITORIES
+optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "PACKMAN FLATPAK"
+
+# A.3 🛠️ Install Packages
+optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
+
+# 🎨 A.3.1. Choose Desktop Environment
+optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
+
+# 👨‍💻 A.3.2 DEV_TOOLS
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM DOCKER NVM NPM YARN GIT"
+
+# Ask for Git config
+case "$GIT" in [yY] | [yY][eE][sS])
+  read -p "What is git user name ❔ " GIT_NAME
+  read -p "What is git user Email ❔ " GIT_EMAIL
+  # echo " $GIT_NAME"
+  ;;
+*)
+  printf ""
+  ;;
+esac
+
+# 📝 A.3.3 Choose Office
+optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE SIGNAL OKULAR THUNDERBIRD MAILSPRING"
+
+# 📺 A.3.4 Choose Media
+optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO YOUTUBE_DL"
+
+# 🌐 A.3.5 Choose Browsers
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
+
+# 🖼️ A.3.6 Choose PHOTO_EDITING
+optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
+
+# 💻 A.3.7 Choose Terminal
+optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
+
+# 👾 A.3.8 Choose OTHER
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK"
+

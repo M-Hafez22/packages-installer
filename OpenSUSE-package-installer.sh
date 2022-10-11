@@ -148,3 +148,16 @@ case "$CODIUM" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 Install VSCODE
+case "$VSCODE" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing VSCODE\e[0m\n"
+  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  sudo zypper addrepo  https://packages.microsoft.com/yumrepos/vscode vscode
+  sudo zypper ref
+  sudo zypper install -y code
+  printf "\n✅\e[1;32m VSCODE Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac

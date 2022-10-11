@@ -176,3 +176,5 @@ case "$SUBLIME" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 Install VIM
+installPackage "$VIM" "vim"

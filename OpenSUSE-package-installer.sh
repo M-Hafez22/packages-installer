@@ -216,3 +216,19 @@ case "$NVM" in [yY] | [yY][eE][sS])
 esac
 # 🧩 Install YARN
 installPackage "$YARN" "yarn"
+# 🧩 Install GIT
+case "$GIT" in [yY] | [yY][eE][sS])
+  installPackage "$GIT" "git"
+  # Add GIT NAME
+  printf "\n\e[1;32m Add Your Git user name $GIT_NAME\e[0m\n"
+  git config --global user.name $GIT_NAME
+  printf "\n\e[1;34m " && git config user.name && printf "\e[0m\n"
+  # Add GIT EMAIL
+  printf "\n\e[1;32m Add Your Git user Email $GIT_EMAIL\e[0m\n"
+  git config --global user.email $GIT_EMAIL
+  printf "\n\e[1;34m " && git config user.email && printf "\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac

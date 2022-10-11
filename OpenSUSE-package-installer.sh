@@ -121,3 +121,14 @@ case "$FLATPAK" in [yY] | [yY][eE][sS])
   ;;
 esac
 
+# PACKMAN
+case "$PACKMAN" in [yY] | [yY][eE][sS])
+  printf "\n\n📥\e[1;32m  Adding PACKMAN\e[0m\n"
+  sudo zypper ar -cfp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+  sudo zypper dup --from packman --allow-vendor-change
+  printf "\n✅\e[1;32m PACKMAN\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac

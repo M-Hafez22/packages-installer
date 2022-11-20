@@ -246,7 +246,7 @@ case "$CODECS" in [yY] | [yY][eE][sS])
   ;;
 esac
 # 🧩 YOUTUBE_DL
-installPackage "$YOUTUBE_DL" "youtube-dl"
+installPackage "$YOUTUBE_DL" "youtube-dl yt-dlp"
 
 # 🔵 B.3.5. Browsers
 # 🧩 UNGOOGLEDCHROMIUM

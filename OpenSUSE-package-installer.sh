@@ -251,6 +251,8 @@ installPackage "$YOUTUBE_DL" "youtube-dl"
 # 🔵 B.3.5. Browsers
 # 🧩 UNGOOGLEDCHROMIUM
 installPackageFlatpack "$UNGOOGLEDCHROMIUM" "com.github.Eloston.UngoogledChromium"
+# 🧩 CHROMIUM
+installPackage "$CHROMIUM" "chromium"
 # 🧩 CHROME
 case "$CHROME" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Installing Google Chrome\e[0m\n"

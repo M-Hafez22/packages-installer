@@ -188,13 +188,20 @@ installPackage "$NANO" "nano"
 case "$DOCKER" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Adding DOCKER\e[0m\n"
     sudo xbps-install -Syu
-    sudo xbps-install -S Docker
+    sudo xbps-install -S  -y docker
+    printf "\n✅\e[1;32m Install DOCKER\e[0m\n"
+
     sudo ln  -s /etc/sv/containerd /var/service
     sudo ln  -s /etc/sv/docker /var/service
     docker --version
+    printf "\n✅\e[1;32m Enable Docker\e[0m\n"
+    
     # sudo docker pull hello-world
     # sudo docker run hello-world
-    printf "\n✅\e[1;32m DOCKER\e[0m\n"
+
+    sudo groupadd docker
+    sudo gpasswd -a $USER docker
+    printf "\n✅\e[1;32m Add user to Docker Group\e[0m\n"
     ;;
     *)
     printf ""

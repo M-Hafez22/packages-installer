@@ -269,7 +269,7 @@ installPackage "$THUNDERBIRD" "thunderbird"
 # 🧩 MAILSPRING
 installPackageFlatpack "$MAILSPRING" "com.getmailspring.Mailspring"
 # 🧩 FONTS
-installPackage "$FONTS" "noto-fonts-emoji twemoji   noto-fonts-cjk unicode-emoji twemoji noto-fonts-emoji   noto-fonts-emoji"
+installPackage "$FONTS" "noto-fonts-emoji twemoji nerd-fonts noto-fonts-cjk unicode-emoji twemoji noto-fonts-emoji  noto-fonts-emoji"
 
 # 📺 B.3.4. Media
 # 🧩 AUDACIOUS

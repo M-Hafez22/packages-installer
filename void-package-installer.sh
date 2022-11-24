@@ -70,7 +70,7 @@ for QUESTION in $QUESTIONS
 done
 
 # A.2. 🧰 Add ADD_REPOSITORIES
-optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "FLATPAK VOIDPKG"
+optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "FLATPAK VOIDPKG VOID_NONFREE"
 
 # A.3 🛠️ Install Packages
 optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
@@ -146,6 +146,16 @@ case "$VOIDPKG" in [yY] | [yY][eE][sS])
     ./xbps-src binary-bootstrap
     echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
     printf "\n✅\e[1;32m flatpak\e[0m\n"
+    ;;
+    *)
+    printf ""
+    ;;
+esac
+# VOID_NONFREE
+case "$VOID_NONFREE" in [yY] | [yY][eE][sS])
+    printf "\n\n📥\e[1;32m  void-repo-nonfree\e[0m\n"
+    sudo xbps-install -S -y void-repo-nonfree
+    printf "\n✅\e[1;32m void-repo-nonfree\e[0m\n"
     ;;
     *)
     printf ""

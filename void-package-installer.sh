@@ -108,7 +108,7 @@ optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT N
 
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK EXFAT"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK BALENA_ETCHER EXFAT"
 
 # B. Process
 

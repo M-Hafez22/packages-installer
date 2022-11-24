@@ -273,7 +273,7 @@ installPackage "$CLEMENTINE" "clementine"
 # 🧩 OBS_STUDIO
 installPackage "$OBS_STUDIO" "obs-studio"
 # 🧩 YOUTUBE_DL
-installPackage "$YOUTUBE_DL" "youtube-dl"
+installPackage "$YOUTUBE_DL" "youtube-dl yt-dlp"
 # 🧩 MP3INFO
 installPackage "$MP3INFO" "mp3info"
 # 🧩 FFPROBE

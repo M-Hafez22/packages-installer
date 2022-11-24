@@ -302,8 +302,6 @@ installPackageVoidPkg "$VIVALDI" "vivaldi"
 installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
 # 🧩 EDGE
 installPackageFlatpack "$EDGE" "com.microsoft.Edge"
-# 🧩 LIBREWOLF
-installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
 
 # 🖼️ A.3.6 PHOTO_EDITE
 # 🧩 GIMP

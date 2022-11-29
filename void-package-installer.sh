@@ -108,7 +108,7 @@ optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT N
 
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK BALENA_ETCHER EXFAT"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE"
 
 # B. Process
 
@@ -354,3 +354,5 @@ installPackage  "$PLANK" "plank"
 installPackage "$BALENA_ETCHER" "etcher"
 # 🧩 EXFAT
 installPackage "$EXFAT" "exfat-utils"
+# 🧩 FIRMWARE
+installPackage "$FIRMWARE" "linux-firmware linux-firmware-network"

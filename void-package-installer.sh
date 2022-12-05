@@ -295,7 +295,7 @@ installPackage "$CHROMIUM" "chromium"
 # 🧩 UNGOOGLEDCHROMIUM
 installPackageFlatpack "$UNGOOGLEDCHROMIUM" "com.github.Eloston.UngoogledChromium"
 # 🧩 CHROME
-installPackageFlatpack "$CHROME" "com.google.Chrome"
+installPackageVoidPkg "$CHROME" "google-chrome"
 # 🧩 FALKON
 installPackage "$FALKON" "falkon"
 # 🧩 FIREFOX

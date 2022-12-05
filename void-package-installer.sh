@@ -187,7 +187,7 @@ installPackage "$CODEOSS" "vscode"
 # 🧩 Install VSCODE
 installPackageFlatpack "$VSCODE"  "com.visualstudio.code"
 # 🧩 Install SUBLIME
-installPackageFlatpack "$SUBLIME" "com.sublimetext.three"
+installPackage "$SUBLIME" "sublime-text4"
 # 🧩 Install WEBSTORM
 installPackageFlatpack "$WEBSTORM" "com.jetbrains.WebStorm"
 # 🧩 Install VIM

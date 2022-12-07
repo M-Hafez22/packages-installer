@@ -92,7 +92,7 @@ case "$GIT" in [yY] | [yY][eE][sS])
 esac
 
 # 📝 A.3.3 Choose Office
-optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING FONTS TODOIST"
+optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING FONTS PLANNER TODOIST"
 
 # 📺 A.3.4 Choose Media
 optionsList "$MEDIA" "📺  Choose Media Packages" "AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
@@ -272,6 +272,8 @@ installPackageFlatpack "$MAILSPRING" "com.getmailspring.Mailspring"
 installPackage "$FONTS" "noto-fonts-emoji twemoji nerd-fonts noto-fonts-cjk unicode-emoji twemoji noto-fonts-emoji  noto-fonts-emoji"
 # 🧩 TODOIST
 installPackageFlatpack "$TODOIST" "com.todoist.Todoist"
+# 🧩 PLANNER
+installPackage "$PLANNER" "planner"
 # 📺 B.3.4. Media
 # 🧩 AUDACIOUS
 installPackage "$AUDACIOUS" "audacious audacious-plugins"

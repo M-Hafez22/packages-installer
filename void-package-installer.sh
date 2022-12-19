@@ -175,7 +175,7 @@ installPackage "$GNOME" "gnome chrome-gnome-shell"
 # 🧩 Install KDE
 installPackage "$KDE" "kde5"
 # 🧩 Install MATE
-installPackage "$MATE" "mate mate-extra upower0 mate-menu mate-applet-brisk-menu mate-applets mate-tweak"
+installPackage "$MATE" "mate mate-extra upower0 mate-menu  mate-applets mate-tweak"
 # 🧩 Install Xfce
 installPackage "$XFCE" "xfce4  xfce4-battery-plugin  xfce4-clipman-plugin   xfce4-cpufreq-plugin  xfce4-cpugraph-plugin xfce4-datetime-plugin  xfce4-dict   xfce4-diskperf-plugin   xfce4-docklike-plugin xfce4-fsguard-plugin  xfce4-genmon-plugin  xfce4-i3-workspaces-plugin   xfce4-mailwatch-plugin  xfce4-netload-plugin  xfce4-notifyd  xfce4-panel   xfce4-panel-appmenu   xfce4-places-plugin   xfce4-plugins   xfce4-power-manager    xfce4-pulseaudio-plugin    xfce4-screensaver    xfce4-screenshooter    xfce4-sensors-plugin  xfce4-session   xfce4-systemload-plugin   xfce4-taskmanager   xfce4-verve-plugin  xfce4-wavelan-plugin   xfce4-weather-plugin   xfce4-whiskermenu-plugin  xfce4-xkb-plugin "
 

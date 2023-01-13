@@ -446,8 +446,16 @@ case "$EDGE" in [yY] | [yY][eE][sS])
     ;;
 esac
 # 🧩 LIBREWOLF
-installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
-
+case "$LIBREWOLF" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Librewolf\e[0m\n"
+    sudo dnf config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
+    sudo dnf install librewolf
+    printf "\n✅\e[1;32m Librewolf Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
 # 🔵 A.3.6 PHOTO_EDITE
 # 🧩 GIMP
 installPackage "$GIMP" "gimp"

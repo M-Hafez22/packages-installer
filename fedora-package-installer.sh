@@ -375,6 +375,16 @@ installPackage "$RHYTHMBOX" "rhythmbox"
 # 🔵 B.3.5. Browsers
 # 🧩 UNGOOGLEDCHROMIUM
 installPackageFlatpack "$UNGOOGLEDCHROMIUM" "com.github.Eloston.UngoogledChromium"
+# case "$UNGOOGLEDCHROMIUM" in [yY] | [yY][eE][sS])
+#     printf "\n📥 \e[1;32m Installing Ungoogled Chrome\e[0m\n"
+#     sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:/ungoogled_chromium/Fedora_35/home:ungoogled_chromium.repo
+#     sudo dnf install ungoogled-chromium
+#     printf "\n✅\e[1;32m Ungoogled Chrome Installed\e[0m\n"
+#     ;;
+#   *)
+#     printf ""
+#     ;;
+# esac
 # 🧩 CHROMIUM
 installPackage "$CHROMIUM" "chromium"
 # 🧩 CHROME

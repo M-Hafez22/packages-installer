@@ -132,6 +132,7 @@ case "$FLATPAK" in [yY] | [yY][eE][sS])
     sudo apt install -y flatpak
     sudo apt install -y gnome-software-plugin-flatpak
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    sudo flatpak override --filesystem=xdg-data/themes
     printf "\n✅\e[1;32m flatpak\e[0m\n"
     ;;
     *)

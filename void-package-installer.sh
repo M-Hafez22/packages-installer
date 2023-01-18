@@ -128,8 +128,9 @@ esac
 case "$FLATPAK" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Adding Flatpak\e[0m\n"
     sudo xbps-install -S -y  flatpak
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo  
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     printf "***\n \e[1;33m  Flatpak Installed\n  Restart your system \e[0m\n***\n"
+    sudo flatpak override --filesystem=xdg-data/themes
     printf "\n✅\e[1;32m flatpak\e[0m\n"
     ;;
     *)

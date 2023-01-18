@@ -108,7 +108,7 @@ optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT N
 
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE BLUETOOTH"
 
 # B. Process
 
@@ -220,7 +220,7 @@ esac
 # 🧩 Install NVM (NODE & NPM)
 case "$NVM" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Installing NVM & Nodejs & NPM\e[0m\n"
-  installPackage curl
+  sudo xbps-install -Sy  curl
   curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
   source ~/.bashrc
   source ~/.zshrc
@@ -359,3 +359,23 @@ installPackage "$BALENA_ETCHER" "etcher"
 installPackage "$EXFAT" "exfat-utils"
 # 🧩 FIRMWARE
 installPackage "$FIRMWARE" "linux-firmware linux-firmware-network"
+# 🧩 BLUETOOTH
+case "$BLUETOOTH" in [yY] | [yY][eE][sS])
+    printf "\n\e[1;32m Install bluez bluez-alsa\e[0m\n"
+    sudo xbps-install -S dbus bluez bluez-alsa
+    printf "\n\e[1;32m Add Bluetooth services\e[0m\n"
+    sudo ln -s /etc/sv/dbus /var/service
+    sudo ln -s /etc/sv/bluetoothd /var/service
+    printf "\n\e[1;32m Bluetooth is ready\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+
+
+
+
+
+
+

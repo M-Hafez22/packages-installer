@@ -174,7 +174,7 @@ installPackage "$CINNAMON" "cinnamon"
 # 🧩 Install Gnome
 installPackage "$GNOME" "gnome chrome-gnome-shell"
 # 🧩 Install KDE
-installPackage "$KDE" "kde5"
+installPackage "$KDE" "kde5 konsole"
 # 🧩 Install MATE
 installPackage "$MATE" "mate mate-extra upower0 mate-menu  mate-applets mate-tweak"
 # 🧩 Install Xfce

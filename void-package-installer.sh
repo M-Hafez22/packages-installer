@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-printf "\n\e[1;31m Welcome To Void \e[0m\n\n"
+printf "\n\e[32m Welcome To Void \e[0m\n\n"
 # Functions
 # Ask For Options
 function optionsList() {

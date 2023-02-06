@@ -259,6 +259,13 @@ case "$DOCKER" in [yY] | [yY][eE][sS])
 	sudo apt-get update
 	sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
     printf "\n✅\e[1;32m DOCKER Installed\e[0m\n"
+    sudo systemctl enable docker
+    sudo systemctl start docker
+    printf "\n✅\e[1;32m Enable Docker\e[0m\n"
+
+    sudo groupadd docker
+    sudo gpasswd -a $USER docker
+    printf "\n✅\e[1;32m Add user to Docker Group\e[0m\n"
     ;;
   *)
     printf ""

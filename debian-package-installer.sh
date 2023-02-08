@@ -332,7 +332,7 @@ installPackage "$THUNDERBIRD" "thunderbird"
 # 🧩 MAILSPRING
 installPackageFlatpack "$MAILSPRING" "com.getmailspring.Mailspring"
 # 🧩 FONTS
-installPackage "$FONTS" "fonts-noto-color-emoji ttf-mscorefonts-installer ttf-ancient-fonts ttf-ancient-fonts-symbola"
+installPackage "$FONTS" "fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto-color-emoji ttf-mscorefonts-installer ttf-ancient-fonts ttf-ancient-fonts-symbola"
 
 # 📺 B.3.4. Media
 # 🧩 AUDACIOUS

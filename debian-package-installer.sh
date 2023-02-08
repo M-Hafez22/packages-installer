@@ -95,7 +95,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL"
 
 # B. Process
 
@@ -472,3 +472,5 @@ case "$BALENA_ETCHER" in [yY] | [yY][eE][sS])
 esac
 # 🧩 FIRMWARE
 installPackage "$FIRMWARE" "firmware-linux firmware-linux-nonfree libdrm-amdgpu1 xserver-xorg-video-amdgpu"
+# 🧩 BUILD_ESSENTIAL
+installPackage "$BUILD_ESSENTIAL" "build-essential dkms linux-headers-$(uname -r)"

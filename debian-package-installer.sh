@@ -95,7 +95,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE"
 
 # B. Process
 
@@ -455,7 +455,7 @@ installPackage "$RETRO_TERM" "cool-retro-term"
 # 🧩 ROFI
 installPackage "$ROFI" "rofi"
 # 🧩 PLANK
-installPackage  "$PLANK" "plank"
+installPackage  "$PLANK FIRMWARE" "plank FIRMWARE"
 # 🧩 BALENA_ETCHER
 case "$BALENA_ETCHER" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing BALENA_ETCHER\e[0m\n"
@@ -470,3 +470,5 @@ case "$BALENA_ETCHER" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+# 🧩 FIRMWARE
+installPackage "$FIRMWARE" "firmware-linux firmware-linux-nonfree libdrm-amdgpu1 xserver-xorg-video-amdgpu"

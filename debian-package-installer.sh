@@ -95,7 +95,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL FIREWALL"
 
 # B. Process
 
@@ -474,3 +474,5 @@ esac
 installPackage "$FIRMWARE" "firmware-linux firmware-linux-nonfree libdrm-amdgpu1 xserver-xorg-video-amdgpu"
 # 🧩 BUILD_ESSENTIAL
 installPackage "$BUILD_ESSENTIAL" "build-essential dkms linux-headers-$(uname -r)"
+# 🧩 FIREWALL
+installPackage "$FIREWALL" "gufw"

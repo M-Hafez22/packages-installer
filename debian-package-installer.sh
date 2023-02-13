@@ -346,7 +346,18 @@ installPackage "$CLEMENTINE" "clementine"
 # 🧩 OBS_STUDIO
 installPackage "$OBS_STUDIO" "obs-studio"
 # 🧩 YOUTUBE_DL
-installPackage "$YOUTUBE_DL" "youtube-dl"
+# installPackage "$YOUTUBE_DL" "youtube-dl"
+case "$YOUTUBE_DL" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Google Chrome\e[0m\n"
+    sudo apt install -y youtube-dl
+    sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+    sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+    printf "\n✅\e[1;32m Google Chrome Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
 # 🧩 MP3INFO
 installPackage "$MP3INFO" "mp3info"
 # 🧩 CODECS

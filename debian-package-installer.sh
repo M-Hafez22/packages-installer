@@ -95,7 +95,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL FIREWALL"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL FIREWALL LIGHTDM"
 
 # B. Process
 
@@ -487,3 +487,6 @@ installPackage "$FIRMWARE" "firmware-linux firmware-linux-nonfree libdrm-amdgpu1
 installPackage "$BUILD_ESSENTIAL" "build-essential dkms linux-headers-$(uname -r)"
 # 🧩 FIREWALL
 installPackage "$FIREWALL" "gufw"
+# 🧩 LIGHTDM
+installPackage "$LIGHTDM" "lightdm lightdm-settings slick-greeter"
+

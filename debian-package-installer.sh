@@ -80,7 +80,7 @@ case "$GIT" in [yY] | [yY][eE][sS])
 esac
 
 # 💬 A.3.3 Choose Messaging
-optionsList "$MESSAGING" "SIGNAL WHATSAPP"
+optionsList "$MESSAGING" "💬  Choose Messaging Packages" "SIGNAL WHATSAPP"
 
 # 📝 A.3.3 Choose Office
 optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE OKULAR THUNDERBIRD MAILSPRING FONTS"

@@ -73,7 +73,7 @@ done
 optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "FLATPAK VOIDPKG VOID_NONFREE"
 
 # A.3 🛠️ Install Packages
-optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
+optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MESSAGING MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
 
 # 🎨 A.3.1. Choose Desktop Environment
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
@@ -90,6 +90,9 @@ case "$GIT" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+
+# 💬 A.3.3 Choose Messaging
+optionsList "$MESSAGING" "💬  Choose Messaging Packages" "SIGNAL WHATSAPP"
 
 # 📝 A.3.3 Choose Office
 optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING FONTS PLANNER TODOIST"
@@ -259,6 +262,12 @@ case "$GIT" in [yY] | [yY][eE][sS])
 esac
 # 🧩 GITHUB_DESKTOP
 installPackageFlatpack "$GITHUB_DESKTOP" "io.github.shiftey.Desktop"
+
+# 💬 A.3.3 Choose Messaging
+# 🧩 SIGNAL
+installPackageFlatpack "$SIGNAL" "org.signal.Signal"
+# 🧩 WHATSAPP
+installPackageFlatpack "$WHATSAPP" "io.github.mimbrero.WhatsAppDesktop"
 
 # 📝 B.3.3. Office
 # 🧩 LIBREOFFICE

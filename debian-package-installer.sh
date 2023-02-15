@@ -58,7 +58,7 @@ optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "SANP FLATPAK NALA"
 
 
 # A.3 🛠️ Install Packages
-optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories"  "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
+optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories"  "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MESSAGING MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
 
 
 # 🎨 A.3.1. Choose Desktop Environment
@@ -79,8 +79,11 @@ case "$GIT" in [yY] | [yY][eE][sS])
     ;;
 esac
 
+# 💬 A.3.3 Choose Messaging
+optionsList "$MESSAGING" "SIGNAL WHATSAPP"
+
 # 📝 A.3.3 Choose Office
-optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE SIGNAL OKULAR THUNDERBIRD MAILSPRING FONTS"
+optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE OKULAR THUNDERBIRD MAILSPRING FONTS"
 
 # 📺 A.3.4 Choose Media
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL"
@@ -325,14 +328,18 @@ installPackage "$LIBREOFFICE" "libreoffice"
 installPackage "$CALIBRE" "calibre"
 # 🧩 OKULAR
 installPackage "$OKULAR" "okular"
-# 🧩 SIGNAL
-installPackageFlatpack "$SIGNAL" "org.signal.Signal"
 # 🧩 THUNDERBIRD
 installPackage "$THUNDERBIRD" "thunderbird"
 # 🧩 MAILSPRING
 installPackageFlatpack "$MAILSPRING" "com.getmailspring.Mailspring"
 # 🧩 FONTS
 installPackage "$FONTS" "fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto-color-emoji ttf-mscorefonts-installer ttf-ancient-fonts ttf-ancient-fonts-symbola"
+
+# 💬 A.3.3 Choose Messaging
+# 🧩 SIGNAL
+installPackageFlatpack "$SIGNAL" "org.signal.Signal"
+# 🧩 WHATSAPP
+installPackageFlatpack "$WHATSAPP" "io.github.mimbrero.WhatsAppDesktop"
 
 # 📺 B.3.4. Media
 # 🧩 AUDACIOUS

@@ -495,5 +495,5 @@ installPackage "$BUILD_ESSENTIAL" "build-essential dkms linux-headers-$(uname -r
 # 🧩 FIREWALL
 installPackage "$FIREWALL" "gufw"
 # 🧩 LIGHTDM
-installPackage "$LIGHTDM" "lightdm lightdm-settings slick-greeter"
+installPackage "$LIGHTDM" "lightdm lightdm-settings slick-greeter numlockx"
 

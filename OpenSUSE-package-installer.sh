@@ -62,7 +62,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM DOCKER NVM NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM NEOVIM DOCKER NVM NPM YARN GIT"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -182,6 +182,8 @@ case "$SUBLIME" in [yY] | [yY][eE][sS])
 esac
 # 🧩 Install VIM
 installPackage "$VIM" "vim"
+# 🧩 Install NEOVIM
+installPackage "$NEOVIM" "neovim"
 # 🧩 Install DOCKER
 case "$DOCKER" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Installing DOCKER\e[0m\n"

@@ -79,7 +79,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME WEBSTORM VIM NANO DOCKER NVM NODE NPM YARN GIT GITHUB_DESKTOP"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME WEBSTORM VIM NEOVIM NANO DOCKER NVM NODE NPM YARN GIT GITHUB_DESKTOP"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -196,6 +196,8 @@ installPackage "$SUBLIME" "sublime-text4"
 installPackageFlatpack "$WEBSTORM" "com.jetbrains.WebStorm"
 # 🧩 Install VIM
 installPackage "$VIM" "vim"
+# 🧩 Install NEOVIM
+installPackage "$NEOVIM" "neovim"
 # 🧩 Install NANO
 installPackage "$NANO" "nano"
 # 🧩 Install DOCKER

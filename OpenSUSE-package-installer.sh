@@ -279,3 +279,25 @@ case "$CHROME" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+
+# 💻 TERMINAL
+# 🧩 BPYTOP
+installPackage "$BPYTOP" "bpytop"
+# 🧩 HTOP
+installPackage "$HTOP" "htop"
+# 🧩 SL
+installPackage "$SL" "sl"
+# 🧩 CMATRIX
+installPackage "$CMATRIX" "cmatrix"
+# 🧩 LOLCAT
+installPackage "$LOLCAT" "lolcat"
+# 🧩 NEOFETCH
+installPackage "$NEOFETCH" "neofetch"
+# 🧩 TREE
+installPackage "$TREE" "tree"
+# 🧩 TERMINATOR
+installPackage "$TERMINATOR" "terminator"
+# 🧩 ZSH
+installPackage "$ZSH" "zsh"
+# 🧩 RETRO_TERM
+installPackage "$RETRO_TERM" "cool-retro-term"

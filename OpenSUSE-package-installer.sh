@@ -401,3 +401,9 @@ installPackage "$TERMINATOR" "terminator"
 installPackage "$ZSH" "zsh"
 # 🧩 RETRO_TERM
 installPackage "$RETRO_TERM" "cool-retro-term"
+
+# 👾 OTHER
+# 🧩 ROFI
+installPackage "$ROFI" "rofi"
+# 🧩 PLANK
+installPackage  "$PLANK" "plank"

@@ -313,6 +313,8 @@ case "$CHROME" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 FIREFOX
+installPackage "$FIREFOX" "firefox"
 
 # 💻 TERMINAL
 # 🧩 BPYTOP

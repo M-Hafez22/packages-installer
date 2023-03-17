@@ -62,7 +62,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM NEOVIM DOCKER NVM NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM NEOVIM DOCKER NVM NPM YARN GIT GITHUB_DESKTOP"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -238,6 +238,8 @@ case "$GIT" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 GITHUB_DESKTOP
+installPackageFlatpack "$GITHUB_DESKTOP" "io.github.shiftey.Desktop"
 
 # 💬 A.3.3 Choose Messaging
 # 🧩 SIGNAL

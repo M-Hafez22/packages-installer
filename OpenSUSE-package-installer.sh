@@ -315,6 +315,21 @@ case "$CHROME" in [yY] | [yY][eE][sS])
 esac
 # 🧩 FIREFOX
 installPackage "$FIREFOX" "firefox"
+# 🧩 BRAVE
+case "$BRAVE" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m curl\e[0m\n"
+  sudo zypper install curl
+  printf "\n📥 \e[1;32m Add Brave Browsers Repos\e[0m\n"
+  sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+  sudo zypper addrepo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+  printf "\n📥 \e[1;32m Installing Brave Browsers\e[0m\n"
+  sudo zypper install brave-browser
+  printf "\n✅\e[1;32m Brave Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
 
 # 💻 TERMINAL
 # 🧩 BPYTOP

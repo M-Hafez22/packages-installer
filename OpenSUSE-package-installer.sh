@@ -259,6 +259,17 @@ case "$CODECS" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+installPackage "$AUDACIOUS" "audacious audacious-plugins"
+# 🧩 VLC
+installPackage "$VLC" "vlc" 
+# 🧩 MPV
+installPackage "$MPV" "mpv"
+# 🧩 CLEMENTINE
+installPackage "$CLEMENTINE" "clementine"
+# 🧩 OBS_STUDIO
+installPackage "$OBS_STUDIO" "obs-studio"
+# 🧩 MP3INFO
+installPackage "$MP3INFO" "mp3info"
 # 🧩 YOUTUBE_DL
 installPackage "$YOUTUBE_DL" "youtube-dl yt-dlp"
 

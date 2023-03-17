@@ -332,6 +332,20 @@ case "$BRAVE" in [yY] | [yY][eE][sS])
 esac
 # 🧩 LIBREWOLF
 installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
+# 🧩 EDGE
+case "$EDGE" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Add MS Edge Browsers Repos and GPG key\e[0m\n"
+  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  sudo zypper ar https://packages.microsoft.com/yumrepos/edge microsoft-edge-dev
+  printf "\n📥 \e[1;32m Installing MS Edge\e[0m\n"
+  sudo zypper refresh
+  sudo zypper install microsoft-edge-dev
+  printf "\n✅\e[1;32m MS Edge Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
 
 # 💻 TERMINAL
 # 🧩 BPYTOP

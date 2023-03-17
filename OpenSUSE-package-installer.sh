@@ -302,6 +302,18 @@ installPackage "$HTOP" "htop"
 installPackage "$SL" "sl"
 # 🧩 CMATRIX
 installPackage "$CMATRIX" "cmatrix"
+case "$CMATRIX" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Add  utilities repo\e[0m\n"
+  zypper addrepo https://download.opensuse.org/repositories/utilities/openSUSE_Factory/utilities.repo
+  printf "\n📥 \e[1;32m Install cmatrix \e[0m\n"
+  zypper refresh
+  zypper install cmatrix
+  printf "\n✅\e[1;32m cmatrix Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
 # 🧩 LOLCAT
 installPackage "$LOLCAT" "lolcat"
 # 🧩 NEOFETCH

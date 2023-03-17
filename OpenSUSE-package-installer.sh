@@ -91,7 +91,7 @@ optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLE
 optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FIREFOX BRAVE VIVALDI EDGE LIBREWOLF"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
-optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
+optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGMA"
 
 # 💻 A.3.7 Choose Terminal
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
@@ -359,6 +359,14 @@ case "$VIVALDI" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+
+# 🖼️ A.3.6 PHOTO_EDITE
+# 🧩 GIMP
+installPackage "$GIMP" "gimp"
+# 🧩 INKSCAPE
+installPackage "$INKSCAPE" "inkscape"
+# 🧩 FIGMA
+installPackageFlatpack "$FIGMA" "io.github.Figma_Linux.figma_linux"
 
 # 💻 TERMINAL
 # 🧩 BPYTOP

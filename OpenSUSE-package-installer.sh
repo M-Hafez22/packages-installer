@@ -330,6 +330,8 @@ case "$BRAVE" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 LIBREWOLF
+installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
 
 # 💻 TERMINAL
 # 🧩 BPYTOP

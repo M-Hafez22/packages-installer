@@ -56,7 +56,7 @@ done
 optionsList "$ADD_REPOSITORIES" "🧰 Repositories" "PACKMAN FLATPAK"
 
 # A.3 🛠️ Install Packages
-optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MESSAGING MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
+optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_ENVIRONMENT DEV_TOOLS OFFICE MAIL MESSAGING MEDIA BROWSERS PHOTO_EDITING TERMINAL OTHER"
 
 # 🎨 A.3.1. Choose Desktop Environment
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
@@ -80,6 +80,9 @@ optionsList "$MESSAGING" "💬  Choose Messaging Packages" "SIGNAL WHATSAPP"
 
 # 📝 A.3.3 Choose Office
 optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE OKULAR FONTS TODOIST"
+
+# 📧 A.3.3 Choose Mail
+optionsList "$MAIL" "📧  Choose Mail Packages" "THUNDERBIRD MAILSPRING"
 
 # 📺 A.3.4 Choose Media
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL"
@@ -258,6 +261,12 @@ installPackage "$CALIBRE" calibre
 installPackage "$FONTS" "noto-fonts-emoji twemoji nerd-fonts noto-fonts-cjk unicode-emoji twemoji noto-fonts-emoji  noto-fonts-emoji"
 # 🧩 TODOIST
 installPackageFlatpack "$TODOIST" "com.todoist.Todoist"
+
+# 📧 Mail
+# 🧩 THUNDERBIRD
+installPackage "$THUNDERBIRD" "thunderbird"
+# 🧩 MAILSPRING
+installPackageFlatpack "$MAILSPRING" "com.getmailspring.Mailspring"
 
 # 🔵 B.3.4. Media
 # 🧩 CODECS

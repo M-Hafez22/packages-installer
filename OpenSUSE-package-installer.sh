@@ -346,6 +346,19 @@ case "$EDGE" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 VIVALDI
+case "$VIVALDI" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Add Vivaldi Browsers Repos\e[0m\n"
+  sudo zypper ar https://repo.vivaldi.com/archive/vivaldi-suse.repo
+  printf "\n📥 \e[1;32m Installing Vivaldi\e[0m\n"
+  sudo zypper refresh
+  sudo zypper install vivaldi-stable
+  printf "\n✅\e[1;32m Vivaldi Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
 
 # 💻 TERMINAL
 # 🧩 BPYTOP

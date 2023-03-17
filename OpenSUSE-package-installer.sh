@@ -79,7 +79,7 @@ esac
 optionsList "$MESSAGING" "💬  Choose Messaging Packages" "SIGNAL WHATSAPP"
 
 # 📝 A.3.3 Choose Office
-optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE OKULAR THUNDERBIRD MAILSPRING"
+optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE OKULAR FONTS TODOIST"
 
 # 📺 A.3.4 Choose Media
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL"
@@ -246,6 +246,18 @@ installPackageFlatpack "$GITHUB_DESKTOP" "io.github.shiftey.Desktop"
 installPackageFlatpack "$SIGNAL" "org.signal.Signal"
 # 🧩 WHATSAPP
 installPackageFlatpack "$WHATSAPP" "io.github.mimbrero.WhatsAppDesktop"
+
+# 📝 B.3.3. Office
+# 🧩 LIBREOFFICE
+installPackage "$LIBREOFFICE" "libreoffice"
+# 🧩 OKULAR
+installPackage "$OKULAR" "okular"
+# 🧩 CALIBRE
+installPackage "$CALIBRE" calibre
+# 🧩 FONTS
+installPackage "$FONTS" "noto-fonts-emoji twemoji nerd-fonts noto-fonts-cjk unicode-emoji twemoji noto-fonts-emoji  noto-fonts-emoji"
+# 🧩 TODOIST
+installPackageFlatpack "$TODOIST" "com.todoist.Todoist"
 
 # 🔵 B.3.4. Media
 # 🧩 CODECS

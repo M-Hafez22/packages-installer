@@ -66,7 +66,7 @@ optionsList "$DESKTOP_ENVIRONMENT"   "🎨 Choose Desktop Environment(s)" "AWESO
 
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "WEBSTORM VSCODE CODIUM CODEOSS SUBLIME VIM NEOVIM DOCKER NVM NODE NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "WEBSTORM VSCODE CODIUM CODEOSS SUBLIME VIM NEOVIM DOCKER NVM NODE NPM YARN GIT GITHUB_DESKTOP"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -320,6 +320,18 @@ case "$GIT" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+# 🧩 Install GITHUB_DESKTOP
+case "$GITHUB_DESKTOP" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing GitHub Desktop\e[0m\n"
+    sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.0-linux2/GitHubDesktop-linux-2.9.0-linux2.deb
+    sudo apt-get --fix-broken install ./GitHubDesktop-linux-2.9.0-linux2.deb
+    rm -rf ./GitHubDesktop-linux-2.9.0-linux2.deb
+    printf "\n✅\e[1;32m GitHub Desktop Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
 
 # 📝 B.3.3. Office
 # 🧩 LIBREOFFICE
@@ -353,7 +365,7 @@ installPackage "$CLEMENTINE" "clementine"
 # 🧩 OBS_STUDIO
 installPackage "$OBS_STUDIO" "obs-studio"
 # 🧩 YOUTUBE_DL
-# installPackage "$YOUTUBE_DL" "youtube-dl"
+# installPackage "$YOUTUBE_DL" "youtube-dl yt-dlp"
 case "$YOUTUBE_DL" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing Google Chrome\e[0m\n"
     sudo apt install -y youtube-dl

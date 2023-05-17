@@ -107,7 +107,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM UTILITIES"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE BLUETOOTH"
+optionsList "$OTHER" "👾  Choose OTHER" "NEMO ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE BLUETOOTH"
 
 # B. Process
 
@@ -358,6 +358,8 @@ installPackage "$RETRO_TERM" "cool-retro-term"
 installPackage "$UTILITIES" "ark  curl wget unzip gcc make  android-tools  ntfs-3g  xz  bc"
 
 # 👾 OTHER
+# 🧩 NEMO
+installPackage "$NEMO" "nemo totem nemo-fileroller"
 # 🧩 ROFI
 installPackage "$ROFI" "rofi"
 # 🧩 PLANK

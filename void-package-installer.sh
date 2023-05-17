@@ -171,7 +171,7 @@ installPackage "$BUDGIE" "budgie-desktop"
 # 🧩 Install Cinnamon
 installPackage "$CINNAMON" "cinnamon"
 # 🧩 Install Gnome
-installPackage "$GNOME" "gnome chrome-gnome-shell"
+installPackage "$GNOME" "gnome chrome-gnome-shell power-profiles-daemon"
 # 🧩 Install KDE
 installPackage "$KDE" "kde5 konsole"
 # 🧩 Install MATE

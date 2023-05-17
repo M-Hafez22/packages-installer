@@ -8,26 +8,25 @@ function optionsList() {
         printf "\n\e[1;32m $2: \e[0m\n\n"
         options="$3"
         counter=1
-        for option in $options
-            do
+        for option in $options; do
             read -p "$counter. Do you want to $option ❔ y/n: " $option
             ((counter++))
-            done
+        done
         ;;
-        *)
+    *)
         printf ""
         ;;
-    esac    
+    esac
 }
 
-# Install Package 
+# Install Package
 function installPackage() {
     case "$1" in [yY] | [yY][eE][sS])
         printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
         sudo xbps-install -Sy $2
         printf "\n✅\e[1;32m  $2\e[0m\n"
         ;;
-        *)
+    *)
         printf ""
         ;;
     esac
@@ -37,10 +36,10 @@ function installPackage() {
 function installPackageFlatpack() {
     case "$1" in [yY] | [yY][eE][sS])
         printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
-        flatpak install -y flathub  $2
+        flatpak install -y flathub $2
         printf "\n✅\e[1;32m  $2\e[0m\n"
         ;;
-        *)
+    *)
         printf ""
         ;;
     esac
@@ -55,17 +54,15 @@ function installPackageVoidPkg() {
         sudo xbps-install --repository=/home/hafez/rap/void-packages/hostdir/binpkgs/nonfree $2
         printf "\n✅\e[1;32m  $2\e[0m\n"
         ;;
-        *)
+    *)
         printf ""
         ;;
     esac
 }
 
-
 # A. Ask
 QUESTIONS="UPDATE ADD_REPOSITORIES INSTALL_PACKAGES"
-for QUESTION in $QUESTIONS
-	do
+for QUESTION in $QUESTIONS; do
     read -p "Do you want to $QUESTION❔ y/n: " $QUESTION
 done
 
@@ -86,7 +83,7 @@ case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user Email ❔ " GIT_EMAIL
     # echo " $GIT_NAME"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -98,7 +95,7 @@ optionsList "$MESSAGING" "💬  Choose Messaging Packages" "SIGNAL WHATSAPP"
 optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING FONTS PLANNER TODOIST"
 
 # 📺 A.3.4 Choose Media
-optionsList "$MEDIA" "📺  Choose Media Packages" "AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
+optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
 
 # 🌐 A.3.5 Choose Browsers
 optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_DEV BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
@@ -109,7 +106,6 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 # 💻 A.3.7 Choose Terminal
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM UTILITIES"
 
-
 # 👾 A.3.8 Choose OTHER
 optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE BLUETOOTH"
 
@@ -118,10 +114,10 @@ optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK BALENA_ETCHER EXFAT FIRMWA
 # B.1. Update the System
 case "$UPDATE" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Update \e[0m\n"
-	sudo xbps-install -Suv && sudo xbps-install -u xbps -y && sudo xbps-install  -y  -Su  && printf "***\n \e[1;33m  Update Is Completed!  \e[0m\n***\n"
+    sudo xbps-install -Suv && sudo xbps-install -u xbps -y && sudo xbps-install -y -Su && printf "***\n \e[1;33m  Update Is Completed!  \e[0m\n***\n"
     printf "\n✅\e[1;32m  Update\e[0m\n"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -130,13 +126,13 @@ esac
 # Flatpak
 case "$FLATPAK" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Adding Flatpak\e[0m\n"
-    sudo xbps-install -S -y  flatpak
+    sudo xbps-install -S -y flatpak
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     printf "***\n \e[1;33m  Flatpak Installed\n  Restart your system \e[0m\n***\n"
     sudo flatpak override --filesystem=xdg-data/themes
     printf "\n✅\e[1;32m flatpak\e[0m\n"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -148,10 +144,10 @@ case "$VOIDPKG" in [yY] | [yY][eE][sS])
     git clone https://github.com/void-linux/void-packages.git
     cd void-packages
     ./xbps-src binary-bootstrap
-    echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+    echo XBPS_ALLOW_RESTRICTED=yes >>etc/conf
     printf "\n✅\e[1;32m flatpak\e[0m\n"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -161,7 +157,7 @@ case "$VOID_NONFREE" in [yY] | [yY][eE][sS])
     sudo xbps-install -S -y void-repo-nonfree
     printf "\n✅\e[1;32m void-repo-nonfree\e[0m\n"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -189,7 +185,7 @@ installPackageFlatpack "$CODIUM" "com.vscodium.codium"
 # 🧩 Install CODEOSS
 installPackage "$CODEOSS" "vscode"
 # 🧩 Install VSCODE
-installPackageFlatpack "$VSCODE"  "com.visualstudio.code"
+installPackageFlatpack "$VSCODE" "com.visualstudio.code"
 # 🧩 Install SUBLIME
 installPackage "$SUBLIME" "sublime-text4"
 # 🧩 Install WEBSTORM
@@ -204,14 +200,14 @@ installPackage "$NANO" "nano"
 case "$DOCKER" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Adding DOCKER\e[0m\n"
     sudo xbps-install -Syu
-    sudo xbps-install -S  -y docker
+    sudo xbps-install -S -y docker
     printf "\n✅\e[1;32m Install DOCKER\e[0m\n"
 
-    sudo ln  -s /etc/sv/containerd /var/service
-    sudo ln  -s /etc/sv/docker /var/service
+    sudo ln -s /etc/sv/containerd /var/service
+    sudo ln -s /etc/sv/docker /var/service
     docker --version
     printf "\n✅\e[1;32m Enable Docker\e[0m\n"
-    
+
     # sudo docker pull hello-world
     # sudo docker run hello-world
 
@@ -219,26 +215,26 @@ case "$DOCKER" in [yY] | [yY][eE][sS])
     sudo gpasswd -a $USER docker
     printf "\n✅\e[1;32m Add user to Docker Group\e[0m\n"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
 # 🧩 Install NVM (NODE & NPM)
 case "$NVM" in [yY] | [yY][eE][sS])
-  printf "\n📥 \e[1;32m Installing NVM & Nodejs & NPM\e[0m\n"
-  sudo xbps-install -Sy  curl
-  curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-  source ~/.bashrc
-  source ~/.zshrc
-  nvm install --lts
-  nvm install node
-  nvm ls
-  printf "\n\e[1;33m Node: " && node -v && printf "\e[0m\n\e[1;33m npm:" && npm -v && printf "\e[0m\n"
-  printf "\n✅\e[1;32m NODE NPM npm-check-updates Installed\e[0m\n"
-  ;;
+    printf "\n📥 \e[1;32m Installing NVM & Nodejs & NPM\e[0m\n"
+    sudo xbps-install -Sy curl
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    source ~/.bashrc
+    source ~/.zshrc
+    nvm install --lts
+    nvm install node
+    nvm ls
+    printf "\n\e[1;33m Node: " && node -v && printf "\e[0m\n\e[1;33m npm:" && npm -v && printf "\e[0m\n"
+    printf "\n✅\e[1;32m NODE NPM npm-check-updates Installed\e[0m\n"
+    ;;
 *)
-  printf ""
-  ;;
+    printf ""
+    ;;
 esac
 # 🧩 Install NODE
 installPackage "$NODE" "nodejs"
@@ -251,14 +247,14 @@ case "$GIT" in [yY] | [yY][eE][sS])
     installPackage "$GIT" "git"
     # Add GIT NAME
     printf "\n\e[1;32m Add Your Git user name $GIT_NAME\e[0m\n"
-    git config --global user.name  $GIT_NAME
+    git config --global user.name $GIT_NAME
     printf "\n\e[1;34m " && git config user.name && printf "\e[0m\n"
     # Add GIT EMAIL
     printf "\n\e[1;32m Add Your Git user Email $GIT_EMAIL\e[0m\n"
-    git config --global user.email  $GIT_EMAIL
-    printf "\n\e[1;34m " && git config user.email && printf "\e[0m\n" 
+    git config --global user.email $GIT_EMAIL
+    printf "\n\e[1;34m " && git config user.email && printf "\e[0m\n"
     ;;
-  *)
+*)
     printf ""
     ;;
 esac
@@ -287,10 +283,11 @@ installPackageFlatpack "$TODOIST" "com.todoist.Todoist"
 # 🧩 PLANNER
 installPackage "$PLANNER" "planner"
 # 📺 B.3.4. Media
+installPackage "$CODECS" "mesa-vdpau intel-ucode"
 # 🧩 AUDACIOUS
 installPackage "$AUDACIOUS" "audacious audacious-plugins"
 # 🧩 VLC
-installPackage "$VLC" "vlc" 
+installPackage "$VLC" "vlc"
 # 🧩 MPV
 installPackage "$MPV" "mpv"
 # 🧩 CLEMENTINE
@@ -364,7 +361,7 @@ installPackage "$UTILITIES" "ark  curl wget unzip gcc make  android-tools  ntfs-
 # 🧩 ROFI
 installPackage "$ROFI" "rofi"
 # 🧩 PLANK
-installPackage  "$PLANK" "plank"
+installPackage "$PLANK" "plank"
 # 🧩 BALENA_ETCHER
 installPackage "$BALENA_ETCHER" "etcher"
 # 🧩 EXFAT
@@ -380,14 +377,7 @@ case "$BLUETOOTH" in [yY] | [yY][eE][sS])
     sudo ln -s /etc/sv/bluetoothd /var/service
     printf "\n\e[1;32m Bluetooth is ready\e[0m\n"
     ;;
-  *)
+*)
     printf ""
     ;;
 esac
-
-
-
-
-
-
-

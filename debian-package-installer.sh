@@ -66,7 +66,7 @@ optionsList "$DESKTOP_ENVIRONMENT"   "🎨 Choose Desktop Environment(s)" "AWESO
 
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "WEBSTORM VSCODE CODIUM CODEOSS SUBLIME VIM NEOVIM DOCKER NVM NODE NPM YARN GIT GITHUB_DESKTOP"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "WEBSTORM VSCODE CODIUM CODEOSS SUBLIME VIM NEOVIM DOCKER NVM NODE NPM YARN TYPESCRIPT GIT GITHUB_DESKTOP"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -297,6 +297,16 @@ case "$YARN" in [yY] | [yY][eE][sS])
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && sudo apt update && sudo apt install yarn -y
     printf "\n\e[1;33m Yarn: " && yarn -version && printf "\e[0m\n"
     printf "\n✅\e[1;32m YARN Installed\e[0m\n"
+    ;;
+  *)
+    printf ""
+    ;;
+esac
+# 🧩 Install TYPESCRIPT
+case "$TYPESCRIPT" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Typescript\e[0m\n"
+    npm install -g typescript
+    printf "\n✅\e[1;32m Typescript Installed\e[0m\n"
     ;;
   *)
     printf ""

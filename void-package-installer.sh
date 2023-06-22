@@ -107,7 +107,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM UTILITIES"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "NEMO ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE BLUETOOTH"
+optionsList "$OTHER" "👾  Choose OTHER" "NEMO CONKY ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE BLUETOOTH"
 
 # B. Process
 
@@ -360,6 +360,21 @@ installPackage "$UTILITIES" "ark  curl wget unzip gcc make  android-tools  ntfs-
 # 👾 OTHER
 # 🧩 NEMO
 installPackage "$NEMO" "nemo totem nemo-fileroller"
+# 🧩 CONKY
+case "$CONKY" in [yY] | [yY][eE][sS])
+    printf "\n\e[1;32m Install Conky Manager 2\e[0m\n"
+    sudo xbps-install base-devel git ImageMagick p7zip rsync conky json-glib-devel gtk+3-devel libgee08-devel vala-devel psmisc
+    git clone https://github.com/zcot/conky-manager2.git
+    cd conky-manager2
+    make
+    sudo make install
+    printf "\n\e[1;32m Conky Manager 2 is ready\e[0m\n"
+    ;;
+*)
+    printf ""
+    ;;
+esac
+
 # 🧩 ROFI
 installPackage "$ROFI" "rofi"
 # 🧩 PLANK

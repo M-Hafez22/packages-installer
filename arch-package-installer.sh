@@ -8,16 +8,15 @@ function optionsList() {
         printf "\n\e[1;32m $2: \e[0m\n\n"
         options="$3"
         counter=1
-        for option in $options
-            do
+        for option in $options; do
             read -p "$counter. Do you want to $option ❔ y/n: " $option
             ((counter++))
-            done
+        done
         ;;
-        *)
+    *)
         printf ""
         ;;
-    esac    
+    esac
 }
 
 # Install Package Pacman
@@ -27,7 +26,7 @@ function installPackagePacman() {
         sudo pacman -S $2
         printf "\n✅\e[1;32m  $2\e[0m\n"
         ;;
-        *)
+    *)
         printf ""
         ;;
     esac
@@ -46,7 +45,7 @@ function installPackageYay() {
         yay -S $2
         printf "\n✅\e[1;32m  $2\e[0m\n"
         ;;
-        *)
+    *)
         printf ""
         ;;
     esac
@@ -56,10 +55,10 @@ function installPackageYay() {
 function installPackageFlatpack() {
     case "$1" in [yY] | [yY][eE][sS])
         printf "\n\n📥\e[1;32m  Installing $2\e[0m\n"
-        flatpak install -y flathub  $2
+        flatpak install -y flathub $2
         printf "\n✅\e[1;32m  $2\e[0m\n"
         ;;
-        *)
+    *)
         printf ""
         ;;
     esac
@@ -67,8 +66,7 @@ function installPackageFlatpack() {
 
 # A. Ask
 QUESTIONS="UPDATE ADD_REPOSITORIES INSTALL_PACKAGES"
-for QUESTION in $QUESTIONS
-	do
+for QUESTION in $QUESTIONS; do
     read -p "Do you want to $QUESTION❔ y/n: " $QUESTION
 done
 
@@ -89,7 +87,7 @@ case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user Email ❔ " GIT_EMAIL
     # echo " $GIT_NAME"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -112,7 +110,6 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
 # 💻 A.3.7 Choose Terminal
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
-
 # 👾 A.3.8 Choose OTHER
 optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK EXFAT"
 
@@ -121,10 +118,10 @@ optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK EXFAT"
 # B.1. Update the System
 case "$UPDATE" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Update \e[0m\n"
-    sudo pacman -Syyu -y 
+    sudo pacman -Syyu -y
     printf "\n✅\e[1;32m  Update\e[0m\n"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -144,12 +141,12 @@ case "$YAY" in [yY] | [yY][eE][sS])
         yay -S pamac-aur
         printf "\n✅\e[1;32m  Pamac\e[0m\n"
         ;;
-        *)
+    *)
         printf ""
         ;;
     esac
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -163,17 +160,17 @@ case "$SANP" in [yY] | [yY][eE][sS])
     sudo ln -s /var/lib/snapd/snap /snap
     printf "\n✅ \e[1;32m Reboot to use Sanp\e[0m\n"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
 # Flatpak
 case "$FLATPAK" in [yY] | [yY][eE][sS])
     printf "\n\n📥\e[1;32m  Adding Flatpak\e[0m\n"
-    sudo pacman -S  flatpak 
+    sudo pacman -S flatpak
     printf "\n✅\e[1;32m flatpak\e[0m\n"
     ;;
-    *)
+*)
     printf ""
     ;;
 esac
@@ -217,7 +214,7 @@ case "$NVM" in [yY] | [yY][eE][sS])
     nvm install --lts
     nvm ls
     ;;
-  *)
+*)
     printf ""
     ;;
 esac
@@ -230,14 +227,14 @@ case "$GIT" in [yY] | [yY][eE][sS])
     installPackagePacman "$GIT" "git"
     # Add GIT NAME
     printf "\n\e[1;32m Add Your Git user name $GIT_NAME\e[0m\n"
-    git config --global user.name  $GIT_NAME
+    git config --global user.name $GIT_NAME
     printf "\n\e[1;34m " && git config user.name && printf "\e[0m\n"
     # Add GIT EMAIL
     printf "\n\e[1;32m Add Your Git user Email $GIT_EMAIL\e[0m\n"
-    git config --global user.email  $GIT_EMAIL
-    printf "\n\e[1;34m " && git config user.email && printf "\e[0m\n" 
+    git config --global user.email $GIT_EMAIL
+    printf "\n\e[1;34m " && git config user.email && printf "\e[0m\n"
     ;;
-  *)
+*)
     printf ""
     ;;
 esac
@@ -264,7 +261,7 @@ installPackagePacman "$FONTS" "otf-cascadia-code  ttf-joypixels  woff2-cascadia-
 # 🧩 AUDACIOUS
 installPackagePacman "$AUDACIOUS" "audacious audacious-plugins"
 # 🧩 VLC
-installPackagePacman "$VLC" "vlc" 
+installPackagePacman "$VLC" "vlc"
 # 🧩 MPV
 installPackagePacman "$MPV" "mpv"
 # 🧩 CLEMENTINE
@@ -284,7 +281,7 @@ installPackagePacman "$CHROMIUM" "chromium"
 # 🧩 UNGOOGLEDCHROMIUM
 installPackageFlatpack "$UNGOOGLEDCHROMIUM" "com.github.Eloston.UngoogledChromium"
 # 🧩 CHROME
-installPackageYay    "$CHROME" "google-chrome"
+installPackageYay "$CHROME" "google-chrome"
 # 🧩 FALKON
 installPackagePacman "$FALKON" "falkon"
 # 🧩 FIREFOX
@@ -300,7 +297,7 @@ installPackagePacman "$VIVALDI" "vivaldi"
 # 🧩 LIBREWOLF
 installPackageYay "$LIBREWOLF" "librewolf"
 # 🧩 EDGE
-installPackageYay "$EDGE" "microsoft-edge-dev-bin"
+installPackageYay "$EDGE" "microsoft-edge-stable-bin"
 # 🧩 WATERFOX LIBREWOLF
 installPackagePacman "$WATERFOX LIBREWOLF" "waterfox LIBREWOLF-g3"
 # 🧩 LIBREWOLF
@@ -338,7 +335,7 @@ installPackagePacman "$RETRO_TERM" "cool-retro-term"
 # 🧩 ROFI
 installPackagePacman "$ROFI" "rofi"
 # 🧩 PLANK
-installPackagePacman  "$PLANK" "plank"
+installPackagePacman "$PLANK" "plank"
 # 🧩 BALENA_ETCHER
 installPackagePacman "$BALENA_ETCHER" "etcher"
 # 🧩 EXFAT

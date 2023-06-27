@@ -437,14 +437,14 @@ case "$VIVALDI" in [yY] | [yY][eE][sS])
 esac
 # 🧩 EDGE
 case "$EDGE" in [yY] | [yY][eE][sS])
-  printf "\n📥 \e[1;32m Installing MS Edge\e[0m\n"
+  printf "\n📥 \e[1;32m Installing MS Edge Stable\e[0m\n"
   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >microsoft.gpg
   sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-  sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+  sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-stable.list'
   sudo rm microsoft.gpg
   sudo apt update
-  sudo apt install microsoft-edge-dev -y
-  printf "\n✅\e[1;32m MS Edge Installed\e[0m\n"
+  sudo apt install microsoft-edge-stable -y
+  printf "\n✅\e[1;32m MS Edge Stable Installed\e[0m\n"
   ;;
 *)
   printf ""

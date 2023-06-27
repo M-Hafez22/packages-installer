@@ -446,7 +446,7 @@ case "$VIVALDI" in [yY] | [yY][eE][sS])
 esac
 # 🧩 EDGE
 case "$EDGE" in [yY] | [yY][eE][sS])
-  printf "\n📥 \e[1;32m Installing MS Edge\e[0m\n"
+  printf "\n📥 \e[1;32m Installing MS Edge Stable\e[0m\n"
   sudo dnf install dnf-plugins-core -y
   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
   sudo dnf -y config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
@@ -454,7 +454,7 @@ case "$EDGE" in [yY] | [yY][eE][sS])
   sudo dnf update --refresh
   sudo dnf install -y microsoft-edge-stable
   microsoft-edge -version
-  printf "\n✅\e[1;32m MS Edge Installed\e[0m\n"
+  printf "\n✅\e[1;32m MS Edge Stable Installed\e[0m\n"
   ;;
 *)
   printf ""

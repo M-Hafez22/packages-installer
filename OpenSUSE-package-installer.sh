@@ -159,7 +159,7 @@ esac
 case "$VSCODE" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Installing VSCODE\e[0m\n"
   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-  sudo zypper addrepo  https://packages.microsoft.com/yumrepos/vscode vscode
+  sudo zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
   sudo zypper ref
   sudo zypper install -y code
   printf "\n✅\e[1;32m VSCODE Installed\e[0m\n"
@@ -292,7 +292,7 @@ case "$CODECS" in [yY] | [yY][eE][sS])
 esac
 installPackage "$AUDACIOUS" "audacious audacious-plugins"
 # 🧩 VLC
-installPackage "$VLC" "vlc" 
+installPackage "$VLC" "vlc"
 # 🧩 MPV
 installPackage "$MPV" "mpv"
 # 🧩 CLEMENTINE
@@ -344,13 +344,13 @@ esac
 installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
 # 🧩 EDGE
 case "$EDGE" in [yY] | [yY][eE][sS])
-  printf "\n📥 \e[1;32m Add MS Edge Browsers Repos and GPG key\e[0m\n"
+  printf "\n📥 \e[1;32m Add MS Edge Stable Browsers Repos and GPG key\e[0m\n"
   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-  sudo zypper ar https://packages.microsoft.com/yumrepos/edge microsoft-edge-dev
-  printf "\n📥 \e[1;32m Installing MS Edge\e[0m\n"
+  sudo zypper ar https://packages.microsoft.com/yumrepos/edge microsoft-edge-stable
+  printf "\n📥 \e[1;32m Installing MS Edge Stable\e[0m\n"
   sudo zypper refresh
-  sudo zypper install microsoft-edge-dev
-  printf "\n✅\e[1;32m MS Edge Installed\e[0m\n"
+  sudo zypper install microsoft-edge-stable
+  printf "\n✅\e[1;32m MS Edge Stable Installed\e[0m\n"
   ;;
 *)
   printf ""
@@ -416,4 +416,4 @@ installPackage "$RETRO_TERM" "cool-retro-term"
 # 🧩 ROFI
 installPackage "$ROFI" "rofi"
 # 🧩 PLANK
-installPackage  "$PLANK" "plank"
+installPackage "$PLANK" "plank"

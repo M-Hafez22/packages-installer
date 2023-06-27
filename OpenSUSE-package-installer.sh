@@ -341,7 +341,19 @@ case "$BRAVE" in [yY] | [yY][eE][sS])
   ;;
 esac
 # 🧩 LIBREWOLF
-installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
+# installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
+case "$LIBREWOLF" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Add Librewolf Browsers Repos\e[0m\n"
+  sudo zypper addrepo https://rpm.librewolf.net/librewolf-repo.repo
+  printf "\n📥 \e[1;32m Installing Librewolf\e[0m\n"
+  sudo zypper refresh
+  sudo zypper install librewolf
+  printf "\n✅\e[1;32m Librewolf Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
 # 🧩 EDGE
 case "$EDGE" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Add MS Edge Stable Browsers Repos and GPG key\e[0m\n"

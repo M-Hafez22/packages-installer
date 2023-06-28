@@ -1,6 +1,6 @@
 # packages-installer
 
-Scripts to install popular packages These package manager
+Scripts to install popular packages for These package manager
 
 1- apt
 2- dnf

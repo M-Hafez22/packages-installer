@@ -11,7 +11,7 @@ Scripts to install popular packages for These package manager
 
 ## License
 
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![License](http://img.shields.io/:license-GNU-blue.svg?style=flat-square)](LICENSE)
 
 - Licensed under the **[GNU Affero General Public License v3.0](LICENSE)**
 - Copyright (c) 2020 Mohamed Hafez

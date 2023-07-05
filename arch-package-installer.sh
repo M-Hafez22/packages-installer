@@ -111,7 +111,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK EXFAT"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK EXFAT QT5CT"
 
 # B. Process
 
@@ -340,3 +340,16 @@ installPackagePacman "$PLANK" "plank"
 installPackagePacman "$BALENA_ETCHER" "etcher"
 # 🧩 EXFAT
 installPackagePacman "$EXFAT" "exfat-utils"
+# 🧩 QT5CT
+case "$QT5CT" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing qt5ct\e[0m\n"
+    sudo apt install -y qt5ct
+    printf "\n✅\e[1;32m qt5ct Installed\e[0m\n"
+
+    printf "\n\e[1;32m Set environment variables in ~/.profile\e[0m\n"
+    echo 'export QT_QPA_PLATFORMTHEME="qt5ct"' >>~/.profile
+    ;;
+*)
+    printf ""
+    ;;
+esac

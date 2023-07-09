@@ -99,7 +99,7 @@ optionsList "$MESSAGING" "💬  Choose Messaging Packages" "SIGNAL WHATSAPP"
 optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING FONTS"
 
 # 📺 A.3.4 Choose Media
-optionsList "$MEDIA" "📺  Choose Media Packages" "AUDACIOUS VLC MPV CLEMENTINE OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
+optionsList "$MEDIA" "📺  Choose Media Packages" "AUDACIOUS VLC MPV CLEMENTINE RHYTHMBOX OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
 
 # 🌐 A.3.5 Choose Browsers
 optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_DEV BRAVE MIDORI VIVALDI EDGE WATERFOX LIBREWOLF"
@@ -266,6 +266,8 @@ installPackagePacman "$VLC" "vlc"
 installPackagePacman "$MPV" "mpv"
 # 🧩 CLEMENTINE
 installPackagePacman "$CLEMENTINE" "clementine"
+# 🧩 Rhythmbox
+installPackage "$RHYTHMBOX" "rhythmbox"
 # 🧩 OBS_STUDIO
 installPackagePacman "$OBS_STUDIO" "obs-studio"
 # 🧩 YOUTUBE_DL

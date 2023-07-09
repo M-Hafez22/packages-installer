@@ -107,7 +107,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM UTILITIES"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "NEMO CONKY ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE BLUETOOTH QT5CT"
+optionsList "$OTHER" "👾  Choose OTHER" "NEMO CONKY ROFI PLANK BALENA_ETCHER EXFAT FIRMWARE BLUETOOTH QT5CT FLATSEAL"
 
 # B. Process
 
@@ -403,7 +403,7 @@ esac
 # 🧩 QT5CT
 case "$QT5CT" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing qt5ct\e[0m\n"
-    sudo apt install -y qt5ct
+    sudo xbps-install -Sy -y qt5ct
     printf "\n✅\e[1;32m qt5ct Installed\e[0m\n"
 
     printf "\n\e[1;32m Set environment variables in ~/.profile\e[0m\n"
@@ -413,3 +413,5 @@ case "$QT5CT" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+# 🧩 FLATSEAL
+installPackageFlatpack "$FLATSEAL" "com.github.tchx84.Flatseal"

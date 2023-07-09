@@ -93,7 +93,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL FIREWALL LIGHTDM QT5CT"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL FIREWALL LIGHTDM QT5CT FLATSEAL"
 
 # B. Process
 
@@ -537,3 +537,5 @@ case "$QT5CT" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 FLATSEAL
+installPackageFlatpack "$FLATSEAL" "com.github.tchx84.Flatseal"

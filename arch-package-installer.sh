@@ -80,7 +80,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "VSCODE CODEOSS CODIUM SUBLIME VIM NVM NODE NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "VSCODE CODEOSS CODIUM SUBLIME VIM NVM NODE NPM YARN TYPESCRIPT GIT"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -222,6 +222,16 @@ esac
 installPackagePacman "$NPM" "npm"
 # 🧩 Install YARN
 installPackagePacman "$YARN" "yarn"
+# 🧩 Install TYPESCRIPT
+case "$TYPESCRIPT" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Typescript\e[0m\n"
+    npm install -g typescript
+    printf "\n✅\e[1;32m Typescript Installed\e[0m\n"
+    ;;
+*)
+    printf ""
+    ;;
+esac
 # 🧩 Install GIT
 case "$GIT" in [yY] | [yY][eE][sS])
     installPackagePacman "$GIT" "git"

@@ -76,7 +76,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME WEBSTORM VIM NEOVIM NANO DOCKER NVM NODE NPM YARN GIT GITHUB_DESKTOP"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME WEBSTORM VIM NEOVIM NANO DOCKER NVM NODE NPM YARN TYPESCRIPT GIT GITHUB_DESKTOP"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -242,6 +242,16 @@ installPackage "$NODE" "nodejs"
 installPackage "$NPM" "npm"
 # 🧩 Install YARN
 installPackage "$YARN" "yarn"
+# 🧩 Install TYPESCRIPT
+case "$TYPESCRIPT" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing Typescript\e[0m\n"
+    npm install -g typescript
+    printf "\n✅\e[1;32m Typescript Installed\e[0m\n"
+    ;;
+*)
+    printf ""
+    ;;
+esac
 # 🧩 Install GIT
 case "$GIT" in [yY] | [yY][eE][sS])
     installPackage "$GIT" "git"
@@ -321,7 +331,7 @@ installPackageFlatpack "$BRAVE" "com.brave.Browser"
 # 🧩 MIDORI
 installPackage "$MIDORI" "midori"
 # 🧩 VIVALDI
-installPackageVoidPkg "$VIVALDI" "vivaldi"
+installPackage "$VIVALDI" "vivaldi"
 # 🧩 LIBREWOLF
 installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
 # 🧩 EDGE

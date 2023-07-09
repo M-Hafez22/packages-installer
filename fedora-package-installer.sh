@@ -79,7 +79,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM DOCKER NVM NPM YARN GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM DOCKER NVM NPM YARN TYPESCRIPT GIT"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -314,6 +314,16 @@ case "$YARN" in [yY] | [yY][eE][sS])
   curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo && sudo yum install yarn -y
   printf "\n\e[1;33m Yarn: " && yarn -version && printf "\e[0m\n"
   printf "\n✅\e[1;32m YARN Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
+# 🧩 Install TYPESCRIPT
+case "$TYPESCRIPT" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing Typescript\e[0m\n"
+  npm install -g typescript
+  printf "\n✅\e[1;32m Typescript Installed\e[0m\n"
   ;;
 *)
   printf ""

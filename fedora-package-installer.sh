@@ -507,7 +507,7 @@ installPackage "$PLANK" "plank"
 # 🧩 QT5CT
 case "$QT5CT" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Installing qt5ct\e[0m\n"
-  sudo apt install -y qt5ct
+  sudo dnf install -y qt5ct
   printf "\n✅\e[1;32m qt5ct Installed\e[0m\n"
 
   printf "\n\e[1;32m Set environment variables in ~/.profile\e[0m\n"

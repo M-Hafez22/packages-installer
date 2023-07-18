@@ -352,7 +352,23 @@ installPackage "$FONTS" "fonts-crosextra-carlito fonts-crosextra-caladea fonts-n
 
 # 💬 A.3.3 Choose Messaging
 # 🧩 SIGNAL
-installPackageFlatpack "$SIGNAL" "org.signal.Signal"
+# installPackageFlatpack "$SIGNAL" "org.signal.Signal"
+case "$SIGNAL" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing Signal\e[0m\n"
+  printf "1. Install official public software signing key:"
+  wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor >signal-desktop-keyring.gpg
+  cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
+  printf "2. Add our repository to your list of repositories:"
+  echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |
+  sudo tee /etc/apt/sources.list.d/signal-xenial.list
+  printf "3. Update your package database and install Signal:"
+  sudo apt update && sudo apt install signal-desktop
+  printf "\n✅\e[1;32m Signal Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
 # 🧩 WHATSAPP
 installPackageFlatpack "$WHATSAPP" "io.github.mimbrero.WhatsAppDesktop"
 

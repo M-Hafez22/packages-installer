@@ -92,7 +92,7 @@ esac
 optionsList "$MESSAGING" "💬  Choose Messaging Packages" "SIGNAL WHATSAPP"
 
 # 📝 A.3.3 Choose Office
-optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDERBIRD MAILSPRING FONTS PLANNER TODOIST"
+optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR EVINCE THUNDERBIRD MAILSPRING FONTS PLANNER TODOIST"
 
 # 📺 A.3.4 Choose Media
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE RHYTHMBOX OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
@@ -282,6 +282,8 @@ installPackageFlatpack "$WHATSAPP" "io.github.mimbrero.WhatsAppDesktop"
 installPackage "$LIBREOFFICE" "libreoffice"
 # 🧩 OKULAR
 installPackage "$OKULAR" "okular"
+# 🧩 EVINCE
+installPackage "$EVINCE" "evince"
 # 🧩 THUNDERBIRD
 installPackage "$THUNDERBIRD" "thunderbird"
 # 🧩 MAILSPRING

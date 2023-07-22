@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-printf "\n\e[1;31m Welcome To Debian \e[0m\n\n"
+printf "\n\e[1;31m Welcome To Debian  \e[0m\n\n"
 # Functions
 # Ask For Options
 function optionsList() {
@@ -360,7 +360,7 @@ case "$SIGNAL" in [yY] | [yY][eE][sS])
   cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
   printf "2. Add our repository to your list of repositories:"
   echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |
-  sudo tee /etc/apt/sources.list.d/signal-xenial.list
+    sudo tee /etc/apt/sources.list.d/signal-xenial.list
   printf "3. Update your package database and install Signal:"
   sudo apt update && sudo apt install signal-desktop
   printf "\n✅\e[1;32m Signal Installed\e[0m\n"

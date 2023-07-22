@@ -98,7 +98,7 @@ optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDER
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE RHYTHMBOX OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_DEV BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_ESR BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGMA"
@@ -324,8 +324,10 @@ installPackageVoidPkg "$CHROME" "google-chrome"
 installPackage "$FALKON" "falkon"
 # 🧩 FIREFOX
 installPackage "$FIREFOX" "firefox"
+# 🧩 FIREFOX_ESR
+installPackage "$FIREFOX_ESR" "firefox-esr"
 # 🧩 FIREFOX_DEV
-installPackage "$FIREFOX_DEV" "firefox-developer-edition"
+# installPackage "$FIREFOX_DEV" "firefox-developer-edition"
 # 🧩 BRAVE
 installPackageFlatpack "$BRAVE" "com.brave.Browser"
 # 🧩 MIDORI

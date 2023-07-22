@@ -292,6 +292,7 @@ installPackage "$FONTS" "noto-fonts-emoji twemoji nerd-fonts noto-fonts-cjk unic
 installPackageFlatpack "$TODOIST" "com.todoist.Todoist"
 # 🧩 PLANNER
 installPackage "$PLANNER" "planner"
+
 # 📺 B.3.4. Media
 installPackage "$CODECS" "mesa-vdpau intel-ucode"
 # 🧩 AUDACIOUS

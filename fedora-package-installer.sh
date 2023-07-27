@@ -79,7 +79,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME VIM DOCKER NVM NPM YARN TYPESCRIPT GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR VIM DOCKER NVM NPM YARN TYPESCRIPT GIT"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -267,6 +267,8 @@ case "$SUBLIME" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 Install PULSAR
+installPackageFlatpack "$PULSAR" "dev.pulsar_edit.Pulsar"
 # 🧩 Install VIM
 installPackage "$VIM" "vim"
 # 🧩 Install DOCKER

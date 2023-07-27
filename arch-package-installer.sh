@@ -80,7 +80,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "VSCODE CODEOSS CODIUM SUBLIME VIM NVM NODE NPM YARN TYPESCRIPT GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "VSCODE CODEOSS CODIUM SUBLIME PULSAR VIM NVM NODE NPM YARN TYPESCRIPT GIT"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -218,6 +218,8 @@ case "$NVM" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+# 🧩 Install PULSAR
+installPackageFlatpack "$PULSAR" "dev.pulsar_edit.Pulsar"
 # 🧩 Install NPM
 installPackagePacman "$NPM" "npm"
 # 🧩 Install YARN

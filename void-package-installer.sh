@@ -275,7 +275,8 @@ installPackageFlatpack "$GITHUB_DESKTOP" "io.github.shiftey.Desktop"
 
 # 💬 A.3.3 Choose Messaging
 # 🧩 SIGNAL
-installPackageFlatpack "$SIGNAL" "org.signal.Signal"
+# installPackageFlatpack "$SIGNAL" "org.signal.Signal"
+installPackage "$SIGNAL" "Signal-Desktop"
 # 🧩 WHATSAPP
 installPackageFlatpack "$WHATSAPP" "io.github.mimbrero.WhatsAppDesktop"
 

@@ -102,7 +102,7 @@ optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR THUNDER
 optionsList "$MEDIA" "📺  Choose Media Packages" "AUDACIOUS VLC MPV CLEMENTINE RHYTHMBOX OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_DEV BRAVE MIDORI VIVALDI EDGE WATERFOX LIBREWOLF"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_DEV BRAVE MIDORI VIVALDI EDGE WATERFOX LIBREWOLF GNOME_BROWSER"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
@@ -314,6 +314,8 @@ installPackageYay "$EDGE" "microsoft-edge-stable-bin"
 installPackagePacman "$WATERFOX LIBREWOLF" "waterfox LIBREWOLF-g3"
 # 🧩 LIBREWOLF
 installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
+# 🧩 GNOME_BROWSER
+installPackagePacman "$GNOME_BROWSER" "epiphany"
 
 # 🖼️ A.3.6 PHOTO_EDITE
 # 🧩 GIMP

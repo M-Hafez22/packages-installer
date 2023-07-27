@@ -102,7 +102,7 @@ optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE CALIBRE OKULAR
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE RHYTHMBOX OBS_STUDIO YOUTUBE_DL"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX BRAVE MIDORI VIVALDI EDGE LIBREWOLF GNOME_BROWSER"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
@@ -481,6 +481,9 @@ case "$LIBREWOLF" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 GNOME_BROWSER
+installPackage "$GNOME_BROWSER" "epiphany"
+
 # 🔵 A.3.6 PHOTO_EDITE
 # 🧩 GIMP
 installPackage "$GIMP" "gimp"

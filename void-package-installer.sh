@@ -98,7 +98,7 @@ optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR EVINCE 
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE RHYTHMBOX OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_ESR BRAVE MIDORI VIVALDI EDGE LIBREWOLF"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_ESR BRAVE MIDORI VIVALDI EDGE GNOME_BROWSER LIBREWOLF"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGMA"
@@ -345,6 +345,8 @@ installPackage "$VIVALDI" "vivaldi"
 installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
 # 🧩 EDGE
 installPackageFlatpack "$EDGE" "com.microsoft.Edge"
+# 🧩 GNOME_BROWSER
+installPackage "$GNOME_BROWSER" "epiphany"
 
 # 🖼️ A.3.6 PHOTO_EDITE
 # 🧩 GIMP

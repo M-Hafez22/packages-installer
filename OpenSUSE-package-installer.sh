@@ -88,7 +88,7 @@ optionsList "$MAIL" "📧  Choose Mail Packages" "THUNDERBIRD MAILSPRING"
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE RHYTHMBOX OBS_STUDIO MP3INFO YOUTUBE_DL"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FIREFOX BRAVE VIVALDI EDGE LIBREWOLF"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FIREFOX BRAVE VIVALDI EDGE LIBREWOLF GNOME_BROWSER"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGMA"
@@ -383,6 +383,8 @@ case "$VIVALDI" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
+# 🧩 GNOME_BROWSER
+installPackage "$GNOME_BROWSER" "epiphany"
 
 # 🖼️ A.3.6 PHOTO_EDITE
 # 🧩 GIMP

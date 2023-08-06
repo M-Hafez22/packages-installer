@@ -76,7 +76,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR WEBSTORM PYCHARM VIM NEOVIM NANO DOCKER NVM NODE NPM YARN TYPESCRIPT GIT GITHUB_DESKTOP"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR WEBSTORM PYCHARM VIM NEOVIM NANO DOCKER NVM NODE NPM YARN TYPESCRIPT NCU GIT GITHUB_DESKTOP"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -98,7 +98,7 @@ optionsList "$OFFICE" "📝  Choose Office Packages" "LIBREOFFICE OKULAR EVINCE 
 optionsList "$MEDIA" "📺  Choose Media Packages" "CODECS AUDACIOUS VLC MPV CLEMENTINE RHYTHMBOX OBS_STUDIO MP3INFO YOUTUBE_DL FFMPEG"
 
 # 🌐 A.3.5 Choose Browsers
-optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_ESR BRAVE MIDORI VIVALDI EDGE GNOME_BROWSER LIBREWOLF"
+optionsList "$BROWSERS" "🌐  Choose Browsers" "CHROMIUM UNGOOGLEDCHROMIUM CHROME FALKON FIREFOX FIREFOX_ESR BRAVE MIDORI VIVALDI EDGE GNOME_BROWSER LIBREWOLF TOR"
 
 # 🖼️ A.3.6 Choose PHOTO_EDITING
 optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGMA"
@@ -256,6 +256,16 @@ case "$TYPESCRIPT" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
+# 🧩 Install NCU
+case "$NCU" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing npm Check Updates\e[0m\n"
+    npm install -g npm-check-updates
+    printf "\n✅\e[1;32m npm Check Updates Installed\e[0m\n"
+    ;;
+*)
+    printf ""
+    ;;
+esac
 # 🧩 Install GIT
 case "$GIT" in [yY] | [yY][eE][sS])
     installPackage "$GIT" "git"
@@ -345,6 +355,8 @@ installPackage "$MIDORI" "midori"
 installPackage "$VIVALDI" "vivaldi"
 # 🧩 LIBREWOLF
 installPackageFlatpack "$LIBREWOLF" "io.gitlab.librewolf-community"
+# 🧩 TOR
+installPackage "$TOR" "torbrowser-launcher"
 # 🧩 EDGE
 installPackageFlatpack "$EDGE" "com.microsoft.Edge"
 # 🧩 GNOME_BROWSER

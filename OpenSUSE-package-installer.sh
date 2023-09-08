@@ -270,7 +270,8 @@ installPackageFlatpack "$GITHUB_DESKTOP" "io.github.shiftey.Desktop"
 # 🧩 SIGNAL
 installPackageFlatpack "$SIGNAL" "org.signal.Signal"
 # 🧩 WHATSAPP
-installPackageFlatpack "$WHATSAPP" "io.github.mimbrero.WhatsAppDesktop"
+# installPackageFlatpack "$WHATSAPP" "io.github.mimbrero.WhatsAppDesktop"
+installPackage "$WHATSAPP" "whatsapp-for-linux"
 
 # 📝 B.3.3. Office
 # 🧩 LIBREOFFICE

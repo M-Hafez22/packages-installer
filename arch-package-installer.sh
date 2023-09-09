@@ -234,8 +234,8 @@ case "$TYPESCRIPT" in [yY] | [yY][eE][sS])
     printf ""
     ;;
 esac
-# 🧩 Install NCU
-case "$NCU" in [yY] | [yY][eE][sS])
+# 🧩 Install NodeCheckUpdate
+case "$NodeCheckUpdate" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing npm Check Updates\e[0m\n"
     npm install -g npm-check-updates
     printf "\n✅\e[1;32m npm Check Updates Installed\e[0m\n"

@@ -52,6 +52,7 @@ function installPackageVoidPkg() {
         cd ~/rap/void-packages
         ./xbps-src pkg $2
         sudo xbps-install --repository=/home/hafez/rap/void-packages/hostdir/binpkgs/nonfree $2
+        xbps-install --repository hostdir/binpkgs $2
         printf "\n✅\e[1;32m  $2\e[0m\n"
         ;;
     *)

@@ -428,7 +428,7 @@ installPackage "$FIRMWARE" "linux-firmware linux-firmware-network"
 # 🧩 BLUETOOTH
 case "$BLUETOOTH" in [yY] | [yY][eE][sS])
     printf "\n\e[1;32m Install bluez bluez-alsa\e[0m\n"
-    sudo xbps-install -S dbus bluez bluez-alsa
+    sudo xbps-install -S dbus bluez bluez-alsa libspa-bluetooth
     printf "\n\e[1;32m Add Bluetooth services\e[0m\n"
     sudo ln -s /etc/sv/dbus /var/service
     sudo ln -s /etc/sv/bluetoothd /var/service

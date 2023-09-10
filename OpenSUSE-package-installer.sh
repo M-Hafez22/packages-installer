@@ -342,7 +342,7 @@ installPackage "$YOUTUBE_DL" "youtube-dl yt-dlp"
 
 # 🔵 B.3.5. Browsers
 # 🧩 UNGOOGLEDCHROMIUM
-installPackageFlatpack "$UNGOOGLEDCHROMIUM" "com.github.Eloston.UngoogledChromium"
+installPackage "$UNGOOGLEDCHROMIUM" "ungoogled-chromium"
 # 🧩 CHROMIUM
 installPackage "$CHROMIUM" "chromium"
 # 🧩 CHROME

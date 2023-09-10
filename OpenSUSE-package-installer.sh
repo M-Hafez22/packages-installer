@@ -62,7 +62,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR VIM NEOVIM DOCKER NVM NPM YARN TYPESCRIPT NodeCheckUpdate GIT GITHUB_DESKTOP"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR VIM NEOVIM DOCKER NVM NPM YARN TYPESCRIPT NodeCheckUpdate DOTNET GIT GITHUB_DESKTOP"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -237,8 +237,29 @@ case "$TYPESCRIPT" in [yY] | [yY][eE][sS])
   printf ""
   ;;
 esac
-# 🧩 Install NCU
-case "$NCU" in [yY] | [yY][eE][sS])
+# 🧩 Install DOTNET
+case "$DOTNET" in [yY] | [yY][eE][sS])
+  printf "\n📥 Add the Microsoft package signing key to your list of trusted keys and add the Microsoft package repository."
+  # From MS Docs
+  # sudo zypper install libicu
+  # sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  # wget https://packages.microsoft.com/config/opensuse/15/prod.repo
+  # sudo mv prod.repo /etc/zypp/repos.d/microsoft-prod.repo
+  # sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
+
+  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  sudo zypper addrepo --refresh https://packages.microsoft.com/config/opensuse/15/prod.repo
+
+  printf "\n📥 \e[1;32m Installing .NET\e[0m\n"
+  sudo zypper install -y dotnet-sdk-7.0
+  printf "\n✅\e[1;32m .NET Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
+# 🧩 Install NodeCheckUpdate
+case "$NodeCheckUpdate" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Installing npm Check Updates\e[0m\n"
   npm install -g npm-check-updates
   printf "\n✅\e[1;32m npm Check Updates Installed\e[0m\n"

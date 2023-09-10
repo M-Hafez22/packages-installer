@@ -77,7 +77,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR WEBSTORM PYCHARM VIM NEOVIM NANO DOCKER NVM NODE NPM YARN TYPESCRIPT NodeCheckUpdate GIT GITHUB_DESKTOP"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR WEBSTORM PYCHARM VIM NEOVIM NANO DOCKER NVM NODE NPM YARN TYPESCRIPT NodeCheckUpdate DOTNET GIT GITHUB_DESKTOP"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -256,6 +256,21 @@ case "$TYPESCRIPT" in [yY] | [yY][eE][sS])
 *)
     printf ""
     ;;
+esac
+# 🧩 Install DOTNET
+case "$DOTNET" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing .NET\e[0m\n"
+  cd ~/Documents/
+  wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+  chmod +x ./dotnet-install.sh
+  ./dotnet-install.sh --channel 7.0
+  sudo ln -s ~/.dotnet/dotnet /usr/bin
+  dotnet --version
+  printf "\n✅\e[1;32m .NET Installed\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
 esac
 # 🧩 Install NodeCheckUpdate
 case "$NodeCheckUpdate" in [yY] | [yY][eE][sS])

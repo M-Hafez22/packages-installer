@@ -80,7 +80,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "VSCODE CODEOSS CODIUM SUBLIME PULSAR VIM NVM NODE NPM YARN TYPESCRIPT GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "VSCODE CODEOSS CODIUM SUBLIME PULSAR VIM NVM NODE NPM YARN TYPESCRIPT NodeCheckUpdate DOTNET GIT"
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
     read -p "What is git user name ❔ " GIT_NAME
@@ -239,6 +239,21 @@ case "$NodeCheckUpdate" in [yY] | [yY][eE][sS])
     printf "\n📥 \e[1;32m Installing npm Check Updates\e[0m\n"
     npm install -g npm-check-updates
     printf "\n✅\e[1;32m npm Check Updates Installed\e[0m\n"
+    ;;
+*)
+    printf ""
+    ;;
+esac
+# 🧩 Install DOTNET
+case "$DOTNET" in [yY] | [yY][eE][sS])
+    printf "\n📥 \e[1;32m Installing .NET\e[0m\n"
+    cd ~/Documents/
+    wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+    chmod +x ./dotnet-install.sh
+    ./dotnet-install.sh --channel 7.0
+    sudo ln -s ~/.dotnet/dotnet /usr/bin
+    dotnet --version
+    printf "\n✅\e[1;32m .NET Installed\e[0m\n"
     ;;
 *)
     printf ""

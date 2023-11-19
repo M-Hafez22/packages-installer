@@ -111,7 +111,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE"
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK QT5CT FLATSEAL"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK QT5CT FLATSEAL KDE_CONNECT"
 
 # B. Process
 
@@ -571,3 +571,5 @@ case "$QT5CT" in [yY] | [yY][eE][sS])
 esac
 # 🧩 FLATSEAL
 installPackageFlatpack "$FLATSEAL" "com.github.tchx84.Flatseal"
+# 🧩 KDE_CONNECT
+installPackage "$KDE_CONNECT" "kde-connect"

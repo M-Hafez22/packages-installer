@@ -79,7 +79,7 @@ optionsList "$INSTALL_PACKAGES" "🛠️ Choose Packages Categories" "DESKTOP_EN
 optionsList "$DESKTOP_ENVIRONMENT" "🎨 Choose Desktop Environment(s)" "AWESOME BUDGIE CINNAMON GNOME KDE MATE PANTHEON XFCE"
 
 # 👨‍💻 A.3.2 DEV_TOOLS
-optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR VIM DOCKER NVM NPM YARN TYPESCRIPT NodeCheckUpdate DOTNET GIT"
+optionsList "$DEV_TOOLS" "👨‍💻  Choose Developer Tools" "CODIUM VSCODE CODEOSS SUBLIME PULSAR VIM DOCKER NVM NPM YARN TYPESCRIPT NodeCheckUpdate DOTNET GIT GITHUB_DESKTOP"
 
 # Ask for Git config
 case "$GIT" in [yY] | [yY][eE][sS])
@@ -367,6 +367,18 @@ case "$GIT" in [yY] | [yY][eE][sS])
   printf "\n\e[1;32m Add Your Git user Email $GIT_EMAIL\e[0m\n"
   git config --global user.email $GIT_EMAIL
   printf "\n\e[1;34m " && git config user.email && printf "\e[0m\n"
+  ;;
+*)
+  printf ""
+  ;;
+esac
+# 🧩 GITHUB_DESKTOP
+case "$GITHUB_DESKTOP" in [yY] | [yY][eE][sS])
+  printf "\n📥 \e[1;32m Installing   GITHUB_DESKTOP\e[0m\n"
+  sudo rpm --import https://rpm.packages.shiftkey.dev/gpg.key -y
+  sudo sh -c 'echo -e "[shiftkey-packages]\nname=GitHub Desktop\nbaseurl=https://rpm.packages.shiftkey.dev/rpm/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://rpm.packages.shiftkey.dev/gpg.key" > /etc/yum.repos.d/shiftkey-packages.repo'
+  sudo dnf install -y github-desktop
+  printf "\n✅\e[1;32m   GITHUB_DESKTOP Installed\e[0m\n"
   ;;
 *)
   printf ""

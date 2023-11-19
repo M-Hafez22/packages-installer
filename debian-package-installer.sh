@@ -93,7 +93,7 @@ optionsList "$PHOTO_EDITING" "🖼️  Choose Photo Editing" "GIMP INKSCAPE FIGM
 optionsList "$TERMINAL" "💻  Choose TERMINAL" "BPYTOP HTOP SL CMATRIX LOLCAT NEOFETCH TREE TERMINATOR ZSH RETRO_TERM"
 
 # 👾 A.3.8 Choose OTHER
-optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL FIREWALL LIGHTDM QT5CT FLATSEAL"
+optionsList "$OTHER" "👾  Choose OTHER" "ROFI PLANK FIRMWARE BUILD_ESSENTIAL FIREWALL LIGHTDM QT5CT FLATSEAL KDE_CONNECT"
 
 # B. Process
 
@@ -211,7 +211,7 @@ esac
 # 🧩 Install VSCODE
 case "$VSCODE" in [yY] | [yY][eE][sS])
   sudo apt update
-  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >microsoft.gpg
   sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg
   sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
   sudo apt update
@@ -228,7 +228,7 @@ installPackageFlatpack "$CODEOSS" "com.visualstudio.code-oss"
 case "$SUBLIME" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Installing SUBLIME\e[0m\n"
   sudo apt install apt-transport-https wget -y
-  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg >/dev/null
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt update -y
   sudo apt install sublime-text -y
@@ -585,3 +585,5 @@ case "$QT5CT" in [yY] | [yY][eE][sS])
 esac
 # 🧩 FLATSEAL
 installPackageFlatpack "$FLATSEAL" "com.github.tchx84.Flatseal"
+# 🧩 KDE_CONNECT
+installPackage "$KDE_CONNECT" "kdeconnect"

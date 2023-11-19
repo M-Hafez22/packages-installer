@@ -325,6 +325,7 @@ esac
 case "$DOTNET" in [yY] | [yY][eE][sS])
   printf "\n📥 \e[1;32m Installing .NET\e[0m\n"
   cd ~/Documents/
+  sudo apt install wget -y
   wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
   chmod +x ./dotnet-install.sh
   ./dotnet-install.sh --channel 7.0
